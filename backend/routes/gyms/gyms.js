@@ -184,7 +184,12 @@ router.get("/api/:gym_id", async (req, res) => {
   }
   res.json(data);
 });
-
+router.get("/mapkey", (req, res) => {
+  if (!process.env.GOOGLE_MAPS_API_KEY) {
+    return res.status(500).json({ error: "API Key not found" });
+  }
+  res.json({ apiKey: process.env.GOOGLE_MAPS_API_KEY });
+});
 router.post("/add/reservation", async (req, res) => {
   try {
     const sql =

@@ -24,6 +24,7 @@ export default function MapErea({ gymsData, searchTerm }) {
   const handleMapClick = () => {
     setSelectedMarker(null)
   }
+  const [apiKey, setApiKey] = useState(null)
   const handleSearch = () => {
     if (isLoaded) {
       const geocoder = new window.google.maps.Geocoder()
@@ -128,8 +129,18 @@ export default function MapErea({ gymsData, searchTerm }) {
     },
     [geoJsonData]
   )
-
+  const fetchApiKey = async () => {
+    try {
+      const url = `http://localhost:3001/gyms/mapkey`
+      const res = await fetch(url) // 向後端請求 API Key
+      const data = await res.json()
+      setApiKey(data.apiKey)
+    } catch (error) {
+      console.error('Error fetching API key:', error)
+    }
+  }
   useEffect(() => {
+    fetchApiKey()
     if (gymsData) {
       const covertedData = gymsDatatoGeoJson(gymsData)
       setGeoJsonData(covertedData)
@@ -154,9 +165,16 @@ export default function MapErea({ gymsData, searchTerm }) {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: apiKey || '',
     // libraries: ['places'],
   })
+  if (!apiKey) {
+    return (
+      <h5 style={{ textAlign: 'center', lineHeight: '300px' }}>
+        Fetching API Key...
+      </h5>
+    )
+  }
   if (!isLoaded) {
     return (
       <h5 style={{ textAlign: 'center', lineHeight: '300px' }}>Loading...</h5>
