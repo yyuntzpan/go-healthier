@@ -1,0 +1,273 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 半透明黑色背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* 確保它在其他內容之上 */
+}
+
+.modal {
+  background-color: var(--color-white);
+  width: 100%;
+  max-width: 718px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  gap: 24px;
+  padding: 24px 36px 36px 36px;
+}
+
+.success {
+  line-height: normal;
+  letter-spacing: 3.2px;
+  color: var(--color-midnight-green);
+}
+
+.reserveInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.label {
+
+  font-size: 22px;
+  font-weight: 500;
+  /* letter-spacing: 10px; */
+  text-align-last: justify;
+  margin-right: 18px;
+  width: 170px;
+  /* Adjust this value to ensure alignment */
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 10px;
+
+}
+
+.contact {
+  display: flex;
+
+  gap: 30px;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  line-height: 130%;
+}
+
+.coachInfo {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+.reserveTime {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nice {
+  background-color: var(--color-old-lace);
+  width: 90%;
+  margin: 0 36px 3px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  gap: 20px;
+}
+
+.niceTitle {
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding-top: 20px;
+}
+
+.niceRemind {
+  font-family: 'Gensen', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 0px 18px 20px 18px;
+  position: relative;
+}
+
+.join {
+  position: absolute;
+  right: 24px;
+  bottom: 13px;
+  margin-left: 30px;
+  width: 40%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: var(--color-tomato);
+  border: var(--color-tomato);
+  color: white;
+  letter-spacing: 3px;
+}
+
+.btns {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btnBack {
+  width: 50%;
+  height: 40px;
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-radius: 50px;
+  border: 3px solid var(--dark-gray, #464441);
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+}
+
+.btnFin {
+  width: 50%;
+  height: 40px;
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-radius: 50px;
+  color: var(--color-whitesmoke);
+  border: var(--color-midnight-green);
+  background-color: var(--color-midnight-green);
+}
+
+@media (max-width: 769px) {
+  .modal {
+    display: flex;
+    min-width: 358px;
+    margin: 0 16px;
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .label {
+    color: var(--Black, #000);
+    width: 99px;
+    font-size: 18px;
+    letter-spacing: 0;
+    /* font-weight: 500; */
+
+  }
+
+  .contact {
+    flex-wrap: wrap;
+    gap: 3px
+  }
+
+  .coachInfo {
+    font-family: 'Gensen', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .name {
+    font-size: 18px;
+    letter-spacing: 18px;
+  }
+
+  .reserveTime {
+    font-family: 'Gensen', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .nice {
+    width: 95%;
+    /* 略微增加宽度 */
+  }
+
+  .niceRemind {
+    font-family: 'Gensen', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 0px 18px 20px 18px;
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .join {
+    position: static;
+
+    width: auto;
+    margin: 16px 16px 0 16px;
+  }
+
+  .btns {
+    padding: 0 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btnBack {
+    width: 100%;
+    height: 40px;
+    font-family: 'Gensen', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: px;
+    border-radius: 50px;
+    border: 2px solid var(--dark-gray, #464441);
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+  }
+
+  .btnFin {
+    width: 100%;
+    height: 40px;
+    font-family: 'Gensen', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    border-radius: 50px;
+    color: var(--color-whitesmoke);
+    border: var(--color-midnight-green);
+    background-color: var(--color-midnight-green);
+  }
+}

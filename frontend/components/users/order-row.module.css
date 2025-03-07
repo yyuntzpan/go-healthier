@@ -1,0 +1,116 @@
+.order {
+  margin-bottom: 30px;
+}
+
+.order p {
+  margin-bottom: 0;
+}
+
+.ordernumber {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-50);
+  padding: 6px 80px 6px 0;
+}
+.first_item,
+.other_item {
+  /* display: flex;
+  gap: 40px; */
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.other_item {
+  display: none;
+}
+/* 當第二件商品展開時 */
+.expanded .other_item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.product_image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 30px;
+  padding: 6px 0;
+}
+.product_detail {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product_description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.product_name,
+.product_quantity {
+  font-weight: bold;
+}
+
+.product_price_warpper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product_quantity {
+  align-self: flex-start;
+}
+
+.product_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* 根據需要調整最大寬度 */
+}
+.product_name,
+.specifications,
+.quantity,
+.price {
+  font-family: 'Huninn';
+  font-size: 22px;
+}
+.accordion {
+  padding: 6px 0;
+  text-align: center;
+  color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-50);
+  cursor: pointer; /*滑鼠手指*/
+}
+.sum {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  font-size: 22px;
+  color: var(--color-midnight-green);
+  border-top: 1px solid var(--color-gray-50);
+
+}
+.sum :nth-child(2) {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .sum {
+    gap: 100px;
+  }
+  .order {
+    flex-direction: column;
+  }
+
+  .product_detail {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .product_description {
+    justify-content: flex-start;
+  }
+}

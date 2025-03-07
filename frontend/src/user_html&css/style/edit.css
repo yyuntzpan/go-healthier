@@ -1,0 +1,131 @@
+.user_details{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.information,.address,.change_password{
+    border-bottom: 1px solid var(--color-gray-50);
+    padding-bottom:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.change_password{
+    border: none;
+}
+.change_password label{
+    display: block;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.change_password .form-group{
+    position: relative;
+    padding-bottom: 60px;
+}
+.input-container{
+    width: 240px;
+    position: relative;
+}
+.myicon{
+    position: absolute;
+    right:5px;
+    bottom: 8px;
+    display: none;
+    cursor: pointer;
+}
+.edit_btn{
+    display: flex;
+    gap: 40px;
+    justify-content: flex-end;
+    margin-right:35px ;
+    max-width: 1200px;
+}
+.edit_btn>a{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+.erro_message{
+    color: var(--color-tomato);
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+/* 睜眼閉眼及勾勾時的icon顏色 */
+.myicon i {
+    color: var(--color-midnight-green);
+    font-size: 24px;
+}
+/* 錯誤時的驚嘆號顏色 */
+.myicon i.fa-circle-exclamation {
+    color: var(--color-tomato);
+    font-size: 24px;
+}
+@media screen and (max-width: 1080px){
+    .edit_btn{
+        justify-content: center; 
+    }
+    .btn_md{
+        width: 150px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .menu{
+        display:none ;
+      }
+      .warp{
+        padding:0 16px;
+        border-radius:0;
+        background-color: var(--color-white);
+    }
+    .userinfo{
+        background: white;
+        padding:0;
+        border-radius:0;
+        width: 100%;
+        box-shadow:none;
+    }
+}
+@media screen and (max-width: 600px){
+    .menu{
+        display:none ;
+      }
+      .warp{
+        padding:0 16px;
+        border-radius:0;
+        background-color: var(--color-white);
+    }
+    .userinfo{
+        background: white;
+        padding:0;
+        border-radius:0;
+        width: 100%;
+        box-shadow:none;
+    }
+    .form-group input{
+        max-width: 350px;
+    }
+    .flex .form-group{
+
+        padding-bottom: 0;
+    }
+    .flex{
+        flex-direction: column;
+        justify-content: center; 
+        align-items: start;
+        gap: 30px;
+    }
+}
+
+
+

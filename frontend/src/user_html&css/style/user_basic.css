@@ -1,0 +1,331 @@
+/*以下為會員中心相關的基本樣式版型*/
+
+/* 顏色設定 */
+:root {
+    --color-midnight-green: #1A394A;
+    --color-old-lace: #FFF7E9;
+    --color-yellow: #FFC800;
+    --color-dark-yellow: #FFC800;
+    --color-sunset: #E8D6C4;
+    --color-hover-blue: #004B74;
+    --color-bright-blue: #7ABBDF;
+    --color-tomato: #FF6347;
+    --color-whitesmoke: #F5F5F5;
+    --color-light-gray: #E8E2D8;
+    --color-gray-25: #D3CBBF;
+    --color-gray-50: #8C8983;
+    --color-dark-gray: #464441;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+  }
+  
+  /*字體設定 */
+  @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-EL.ttc") format("truetype");
+      font-weight: 100;
+    }
+    
+    @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-L.ttc") format("truetype");
+      font-weight: 300;
+    }
+    
+    @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-R.ttc") format("truetype");
+      font-weight: 400;
+    }
+    
+    @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-M.ttc") format("truetype");
+      font-weight: 500;
+    }
+    
+    @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-B.ttc") format("truetype");
+      font-weight: 700;
+    }
+    
+    @font-face {
+      font-family: "Gensen";
+      src: url("../../fonts/GenSenRounded-H.ttc") format("truetype");
+      font-weight: 900;
+    }
+    
+    @font-face {
+      font-family: "Huninn";
+      src: url("../../fonts/jf-openhuninn-2.0.ttf") format("truetype");
+      font-weight: normal;
+    }
+    @font-face {
+      font-family: 'Otomanopee';
+      src: url('../../fonts/OtomanopeeOne-Regular.ttf') format('truetype');
+    }
+    
+    /*自訂義的字型*/
+h6{
+    font-family:'Gensen', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  h5{
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+  }
+  h4{
+      font-family:'Gensen', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 3.2px;
+  }
+  p{
+      font-family:'huninn',sans-serif;
+      font-size: 18x;
+      line-height: 160%;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+  }
+  .num{
+    font-family: 'Otomanopee',sans-serif;
+    font-size: 18x;
+    line-height: 160%;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+
+  *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+
+/*我的檔案-地址的下拉選單*/
+select{
+  border-radius: 40px;
+  padding: 10px;
+  max-width: 420px;
+  width: 120px;
+  text-align: center;
+}
+/*我的檔案-地址的下拉選單*/
+
+/*我的檔案-全部的input*/
+  input{
+    border-radius: 40px;
+    padding: 8px 10px;
+    width: 240px;
+  }
+  input:focus,select:focus{
+    border: 3px solid var(--color-midnight-green);
+  }
+  /*我的檔案-全部的input*/
+
+  a{
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 10px;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  /*麵包屑*/
+  .bread{
+    width: 100%;
+    padding: 0 120px;
+    margin-bottom: 50px;
+    font-family: 'huninn',sans-serif;
+    font-size: 18x;
+      line-height: 160%;
+      letter-spacing: 1px;
+  }
+/*會員中心基礎布局*/
+  .warp{
+    background: var(--color-old-lace);
+    border-radius: 50px 0 0 50px;
+    display: flex;
+    gap: 30px;
+    padding-bottom: 110px;
+    margin-bottom: 115px;
+  }
+
+/*會員大頭貼的區塊及sidebar*/
+  .user,
+  .user_sidebar{
+    text-align: center;
+    padding-left:30px;
+    margin-bottom: 25px;
+  }
+
+  .user{
+    padding-top: 30px;
+  }
+
+  .user_sidebar {
+    width:328px;
+  }
+
+/*會員sidebar的內容*/
+ .inline-link{ 
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 22px;
+    margin-bottom: 13px;
+    border: 3px solid transparent;
+    border-radius: 50px;
+    background-color: var(--color-white);
+  } 
+
+  .inline-link:hover,
+  .inline-link:active{ 
+    background-color: var(--color-old-lace);
+    border-color: var(--color-dark-yellow);
+  } 
+
+  /*會員中心的內區塊*/
+  .userinfo{
+    background: white;
+    padding: 32px;
+    border-radius: 40px 0 0 40px;
+    width: 100%;
+     /* figma shadow-card */
+    box-shadow: 0px 5px 30px 0px rgba(70, 68, 65, 0.20);
+}
+
+.user_title{
+  margin-right: 32px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+
+.title_describe{
+padding: 20px 0;
+}
+
+.btn_md{
+  width: 265px;
+  height: 65px;
+  border: none;
+  background-color: var(--color-yellow);
+  border-radius: 50px;
+}
+
+/* pc版footer start */
+footer {
+    display: flex;
+    background-color: #FFF7E9;
+    margin-left: 20px;
+    border-radius: 40px 0 0 0;
+    padding: 20px 100px 20px 30px;
+    justify-content: space-between;
+}
+.icon {
+  display: flex;
+   gap: 15px;
+  align-items: center;
+}
+.icon>li{
+    font-size: 30px;
+}
+
+.icon>li a:hover{
+    color: var(--color-tomato);
+}
+/* pc版footer end */
+
+/* mobile版footer start */
+.mobile_footer{
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 60px;
+  display: none;
+}
+.footer_info .mobile_footer_img{
+  width: 80%;
+}
+.content{
+  display: none;
+  padding-left: 20px;
+}
+.content.active {
+  display: block;
+}
+/* mobile版footer end */
+
+#back-to-top {
+    display: flex;
+    padding: 40px 16px 40px 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 120px;
+    border-radius: 43px 0 0 0;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+    /* Initially hidden */
+    background-color: #FFC800;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease, bottom 1s ease;
+    animation: slideUp 1s forwards;
+}
+
+/*右上角的下拉選單*/
+.user_select{
+  margin: 22px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.user_select select{
+  width: 327px;
+  height: 80px;
+  padding: 0;
+}
+/*右上角的下拉選單*/
+
+@keyframes slideUp {
+    0% {
+        bottom: -50px;
+
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+#back-to-top:hover {
+    background-color: #d1a402;
+}
+
+/*當視窗寬度小到一定程度時換成另一種footer*/
+@media screen and (max-width: 750px){
+footer{
+  display: none;
+}
+.mobile_footer{
+  display: flex;
+  gap: 50px;
+}
+}

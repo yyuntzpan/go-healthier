@@ -1,0 +1,207 @@
+/* 白底section整體 */
+.content {
+  margin-top: -30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 50px 50px 0px 0px;
+  background: #fff;
+  box-shadow: 0px -4px 50px 0px rgba(0, 0, 0, 0.1); */
+}
+
+/* 熱門課程卡片 */
+.popularCard {
+  margin-top: 50px;
+}
+
+/* 搜尋欄 */
+.search {
+  margin-top: 50px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: var(--color-midnight-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  color: var(--color-old-lace);
+  font-size: 30px;
+}
+
+.search_input {
+  height: 60px;
+  padding-left: 69px; /* 確保文本不會重疊到圖標 */
+  border: 3px solid var(--color-midnight-green);
+  border-radius: 50px;
+  box-sizing: border-box; /* 包括內邊距和邊框在內的寬度 */
+  width: 600px;
+  background-color: var(--color-old-lace);
+}
+
+/* checkbox */
+.filter {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  color: var(--color-dark-gray);
+  gap: 15px;
+}
+
+.select {
+  color: var(--color-midnight-green);
+  font-weight: 400;
+  padding-top: 15px;
+  line-height: 100%; /* 18px */
+  letter-spacing: 0.18px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 根据需要调整 */
+}
+
+.checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-old-lace);
+  border: 2px solid var(--color-dark-gray);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.checkbox:hover {
+  border: 3px solid var(--color-midnight-green);
+}
+
+.checkbox:checked {
+  background-color: var(--color-midnight-green);
+  border: 2px solid var(--color-midnight-green);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 15px;
+  border: solid var(--color-old-lace);
+  border-width: 0 3px 3px 0;
+  border-radius: 2px;
+}
+
+.checkbox:hover + label {
+  font-weight: bold;
+  color: var(--color-midnight-green);
+}
+
+.checkbox:checked + label {
+  font-weight: bolder;
+  color: var(--color-midnight-green);
+}
+
+/* 教練卡片 */
+.result {
+  /* padding-top: 30px; */
+  /* background-color: pink; */
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result_title {
+  color: var(--color-midnight-green);
+  font-size: 32px;
+}
+
+.coachCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 改为 flex-start 以确保从左到右排列 */
+  gap: 25px;
+  width: 100%;
+}
+
+.cardWrapper {
+  width: 280px; /* 与 coachCard.module.css 中的宽度相同 */
+  margin-bottom: 25px; /* 添加底部边距，与 gap 相同 */
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-top: -30px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .search_input {
+    width: 100%;
+  }
+
+  .filter {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--color-dark-gray);
+  }
+
+  .select {
+    font-weight: 400;
+    padding-top: 15px;
+    line-height: 100%; /* 18px */
+    letter-spacing: 0.18px;
+    width: 100%; /* 占据整行 */
+    margin-bottom: 15px; /* 与复选框分开 */
+  }
+
+  .checkboxWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .result {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result {
+    padding: 0 15px; /* 添加一些左右内边距 */
+  }
+
+  .result_title {
+    font-size: 28px; /* 可能需要稍微减小字体大小 */
+  }
+
+  .coachCards {
+    justify-content: center; /* 使卡片在水平方向上居中 */
+    gap: 15px; /* 可能需要减小卡片之间的间隔 */
+  }
+}

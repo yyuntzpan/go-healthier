@@ -1,0 +1,6 @@
+.loader {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  color: var(--color-midnight-green);
+}

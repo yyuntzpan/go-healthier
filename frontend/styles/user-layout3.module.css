@@ -1,0 +1,104 @@
+/*以下為會員中心相關的基本樣式版型*/
+
+/*字型*/
+.h5_font {
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+.h4_font {
+  font-family: 'Gensen', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 3.2px;
+}
+.p_font {
+  font-family: 'Huninn', sans-serif;
+  font-size: 18x;
+  line-height: 160%;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.layout a {
+  text-decoration: none;
+  color: var(--color-black);
+  padding: 10px;
+}
+.bread {
+  width: 100%;
+  padding: 0 120px;
+  margin-bottom: 50px;
+  font-family: 'Huninn', sans-serif;
+  font-size: 18x;
+  line-height: 160%;
+  letter-spacing: 1px;
+}
+.warp {
+  background: var(--color-old-lace);
+  border-radius: 50px 0 0 50px;
+  display: flex;
+  gap: 30px;
+  padding-bottom: 110px;
+  margin-bottom: 115px;
+}
+.user,
+.user_sidebar {
+  text-align: center;
+  padding-left: 30px;
+  margin-bottom: 25px;
+}
+.user {
+  padding-top: 30px;
+}
+.user_sidebar {
+  width: 328px;
+}
+.inline_link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 22px;
+  margin-bottom: 13px;
+  border: 3px solid transparent;
+  border-radius: 50px;
+  background-color: var(--color-white);
+}
+.inline_link:hover,
+.inline_link:active {
+  background-color: var(--color-old-lace);
+  border-color: var(--color-dark-yellow);
+}
+.userinfo {
+  background: white;
+  border-radius: 40px 0 0 40px;
+  width: 100%;
+  /* figma shadow-card */
+  box-shadow: 0px 5px 30px 0px rgba(70, 68, 65, 0.2);
+}
+.mobile_nav {
+  display: none;
+}
+.memberAvatar{
+  width: 100px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 950px) {
+  .menu {
+    display: none;
+  }
+  .warp {
+    padding: 0 16px;
+    border-radius: 0;
+    background-color: var(--color-white);
+  }
+  .userinfo {
+    background: white;
+    border-radius: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+}

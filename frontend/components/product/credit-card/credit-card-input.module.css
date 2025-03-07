@@ -1,0 +1,46 @@
+/* 添加 hover 樣式 */
+.customSelect:hover,
+.custom-select:focus {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+  color: #007bff;
+  cursor: pointer;
+}
+.customSelect:hover,
+.customSelect:focus {
+  background-color: #1a394a; /* 滑鼠懸停或聚焦時的背景顏色 */
+  border-color: #007bff; /* 邊框顏色改變 */
+  color: white; /* 文字顏色改變 */
+  cursor: pointer; /* 滑鼠指標變為手形 */
+  border: white;
+}
+.eee {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+}
+.must {
+  width: 70px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: var(--color-midnight-green);
+  color: white;
+  font-size: 20px;
+  padding-top: 11px;
+  padding-right: 11px;
+  margin-left: 100px;
+  padding-left: 11px;
+}
+.ccc {
+  display: flex;
+  justify-content: flex-start;
+}
+.inputSize {
+  border-radius: 50px;
+  width: 70%;
+  height: 40px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+
+  padding-left: 10px;
+}

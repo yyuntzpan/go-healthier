@@ -1,0 +1,235 @@
+.content {
+  padding-left: 240px;
+  padding-right: 240px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+/* 預約表單 */
+.reserveForm {
+  /* color: var(--color-bright-blue); */
+}
+
+.formHead {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.formTitle {
+  font-family: 'Gensen', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3.2px;
+  margin: 0; /* 去除默认的段落边距 */
+}
+
+.checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* 根据需要调整 */
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-old-lace);
+  border: 2px solid var(--color-dark-gray);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.checkbox:hover {
+  border: 3px solid var(--color-midnight-green);
+}
+
+.checkbox:checked {
+  background-color: var(--color-midnight-green);
+  border: 2px solid var(--color-midnight-green);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 15px;
+  border: solid var(--color-old-lace);
+  border-width: 0 3px 3px 0;
+  border-radius: 2px;
+}
+
+.checkbox:hover + label {
+  font-weight: bold;
+  color: var(--color-midnight-green);
+}
+
+.checkbox:checked + label {
+  font-weight: bolder;
+  color: var(--color-midnight-green);
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 0px 80px; */
+  gap: 65px;
+  align-self: stretch;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  align-self: stretch;
+  padding: 50px 0 0 80px;
+  position: relative;
+}
+
+.formLabel {
+  color: var(--color-black);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 10px; /* 添加標籤的下邊距 */
+}
+
+.form input {
+  border-radius: 40px;
+  padding: 0px 30px;
+  width: 100%;
+  height: 60px;
+  /* margin-bottom: 45px; */
+  border: 3px solid var(--color-midnight-green);
+  box-sizing: border-box; /* 包括內邊距和邊框在內的寬度 */
+  width: 60%;
+  background-color: var(--color-old-lace);
+  font-size: 18px; /* 調整字體大小 */
+  line-height: 1.5; /* 調整行高 */
+}
+
+.errorInput {
+  border-color: var(--color-tomato) !important;
+}
+
+.errorMsg {
+  color: var(--color-tomato);
+  font-size: 14px;
+  position: absolute; /* 絕對定位 */
+  bottom: -25px; /* 調整位置，使其緊貼輸入框底部 */
+  left: 0;
+}
+
+.inputWrapper {
+  width: 100%;
+  margin-bottom: 45px; /* 為整個輸入區域添加下邊距 */
+  position: relative; /* 為錯誤訊息定位 */
+}
+
+.timeSelect {
+  height: 60px;
+  width: 60%;
+  background-color: var(--color-old-lace);
+  border: 3px solid var(--color-midnight-green);
+  border-radius: 50px;
+  /* margin-bottom: 45px; */
+  padding: 0 30px 0 30px;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* 移除默認的箭頭 */
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3C/svg%3E'); /* 替換為你自己的箭頭圖標 */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center; /* 調整箭頭的位置 */
+  background-size: 16px; /* 調整箭頭的大小 */
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resCoach {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 75px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 110px;
+}
+
+.btnSend {
+  display: flex;
+  width: 340px;
+  height: 80px;
+  padding: 24px 75px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: var(--color-black);
+  border: var(--color-yellow);
+  border-radius: 40px;
+  background: var(--color-yellow);
+  font-family: 'Gensen', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3.2px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-top: -30px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .formTitle {
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    margin: 0; /* 去除默认的段落边距 */
+  }
+
+  .reserveForm {
+    margin-top: 50px;
+  }
+
+  .form {
+    padding: 30px;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .formHead {
+    padding-left: 30px;
+  }
+
+  .timeSelect {
+    width: 100%;
+  }
+
+  .btnSend {
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+  }
+}

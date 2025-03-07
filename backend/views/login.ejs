@@ -1,0 +1,80 @@
+<%- include("parts/html-head") %> <%- include("parts/navbar") %>
+
+
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form name="form1" onsubmit="sendData(event)">
+            <h2>登入</h2>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email: </label>
+              <input type="text" class="form-control" id="email" name="email">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password: </label>
+              <input type="text" class="form-control" id="password" name="password">
+              <div id="pwdHelp" class="form-text">We'll never share your password with anyone else.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackDrop" tabindex="-1" aria-labelledby="staticBackDropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackDropLabel">登入發生錯誤</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        帳號或密碼錯誤
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">繼續登入</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("parts/scripts") %> 
+<script>
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  const sendData = e => {
+    e.preventDefault();
+
+    const fd = new FormData(document.form1);
+
+    fetch('', {
+      method: 'POST',
+      body: fd,
+    }).then(r => r.json())
+      .then(data => {
+        console.log(data);
+        if (data.success) {
+          location.href = '/';
+        } else {
+          myModal.show();
+        }
+      })
+      .catch(ex => console.log(ex))
+  }
+
+const myModal = new bootstrap.Modal('#staticBackDrop');
+
+</script>
+<%- include("parts/html-foot") %>

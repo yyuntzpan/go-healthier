@@ -1,0 +1,40 @@
+{
+  "name": "0523_nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --env-file=dev.env index.js",
+    "initDB": "node --env-file=dev.env ./data/initDB.js",
+    "dev2": "node --env-file=dev.env ./data/initDB.js && nodemon --env-file=dev.env index.js"
+  },
+  "start": "node src/http-server02",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  },
+  "dependencies": {
+    "authenticate": "^0.1.5",
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ecpay_aio_nodejs": "^1.2.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-mysql-session": "^3.0.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.45",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.8",
+    "nodemailer": "^6.9.14",
+    "uuid": "^9.0.1"
+  },
+  "imports": {
+    "#configs/*": "./configs/*",
+    "#middlewares/*": "./middlewares/*"
+  }
+}

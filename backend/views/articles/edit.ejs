@@ -1,0 +1,204 @@
+<%- include("../parts/html-head") %> <%- include("../parts/navbar") %>
+
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form
+            name="form1"
+            onsubmit="sendData(event)"
+            oninput="formChange(event)"
+          >
+            <h2>新增項目</h2>
+            <div class="mb-3">
+              <label for="article_id" class="form-label">文章編號: </label>
+              <input
+                type="text"
+                class="form-control"
+                id="article_id"
+                name="article_id"
+                value="<%= article_id %>"
+                disabled
+              />
+              <div id="article_idHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_title" class="form-label">文章標題: </label>
+              <input
+                type="text"
+                class="form-control"
+                id="article_title"
+                name="article_title"
+                value="<%= article_title %>"
+              />
+              <div id="article_titleHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_subtype" class="form-label">文章分類: </label>
+              <input
+                type="number"
+                class="form-control"
+                id="article_subtype"
+                name="article_subtype"
+                value="<%= article_subtype %>"
+              />
+              <div id="article_subtypeHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_publish_date" class="form-label"
+                >文章上架時間:
+              </label>
+              <input
+                type="date"
+                class="form-control"
+                id="article_publish_date"
+                name="article_publish_date"
+                value="<%= article_publish_date %>"
+              />
+              <div id="article_publish_dateHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_desc" class="form-label">文章編按: </label>
+              <textarea
+                class="form-control"
+                id="article_desc"
+                name="article_desc"
+                cols="30"
+                rows="3"
+              >
+<%= article_desc %></textarea
+              >
+              <div id="article_descHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_content" class="form-label">文章內容: </label>
+              <textarea
+                class="form-control"
+                id="article_content"
+                name="article_content"
+                cols="30"
+                rows="3"
+              >
+<%= article_content %></textarea
+              >
+              <div id="article_contentHelp" class="form-text"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackDrop"
+  tabindex="-1"
+  aria-labelledby="staticBackDropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackDropLabel">確認編輯</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">成功編輯</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          繼續編輯
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href='/article-book'"
+        >
+          回到列表
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackDrop2"
+  tabindex="-1"
+  aria-labelledby="staticBackDropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackDropLabel">確認新增</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">編輯失敗</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          繼續編輯
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href='/article-book'"
+        >
+          回到列表
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../parts/scripts") %>
+
+<script>
+  const sendData = (e) => {
+    e.preventDefault();
+
+    let isPass = true;
+
+    if (isPass) {
+      const fd = new FormData(document.form1);
+      fetch(`/article-book/api/<%= article_id %>`, {
+        method: "PUT",
+        body: fd,
+      })
+        .then((r) => r.json())
+        .then((data) => {
+          console.log(data);
+          if (data.success) {
+            myModal.show();
+          } else {
+            myModal2.show()
+          }
+        })
+        .catch((ex) => console.log(ex));
+    }
+    const myModal = new bootstrap.Modal("#staticBackDrop");
+    const myModal2 = new bootstrap.Modal("#staticBackDrop2");
+
+  };
+</script>
+
+<%- include("../parts/html-foot") %>

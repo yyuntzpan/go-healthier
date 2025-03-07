@@ -1,0 +1,211 @@
+:root {
+    --color-midnight-green: #1a394a;
+    --color-old-lace: #fff7e9;--color-yellow: #ffc800;
+    --color-dark-yellow: #e8b600;
+    --color-sunset: #e8d6c4;
+    --color-hover-blue: #004b74;
+    --color-bright-blue: #7abbdf;
+    --color-tomato: #ff6347;
+    --color-whitesmoke: #f5f5f5;
+    --color-light-gray: #e8e2d8;
+    --color-gray-25: #d3cbbf;
+    --color-gray-50: #8c8983;
+    --color-dark-gray: #464441;
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
+
+/* 字體設定 */
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-EL.ttc') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-L.ttc') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-R.ttc') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-M.ttc') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-B.ttc') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Gensen';
+    src: url('../fonts/GenSenRounded-H.ttc') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Huninn';
+    src: url('../fonts/jf-openhuninn-2.0.ttf') format('truetype');
+}
+
+/* 總body設定 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* header設定開始*/
+
+.navbar {
+    margin: 10px 0px 25px 0px;
+    padding: 0px 10px 0px 10px;
+    /* background-color: aqua; */
+    display: flex;
+    /* align-items: center;  */
+    height: 66px;
+}
+/* logo與右邊間距 */
+.logo {
+    margin-right: 21px;
+}
+.logo_photo {
+    width: 150px;
+}
+.list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    margin-right: 20px; /* 可選 */
+    font-family: 'Gensen', sans-serif;
+    font-size: 18px;
+    padding-top: 21px;
+}
+
+.icons {
+    display: flex;
+    list-style: none; /* 去掉 li 項的圓點 */
+    padding: 0; /* 去掉 ul 的內邊距 */
+    margin-left: auto; /* 將 icons 列表推到最右邊 */
+    align-items: end;
+    justify-content: center;
+    padding-top: 39px;
+}
+
+.icons .member {
+    color: black;
+    margin-right: 10px;
+    font-size: 21px;
+}
+
+.icons .cart {
+    color: black;
+    margin-right: 10px;
+    font-size: 21px;
+}
+
+/* header設定結束*/
+
+/* section開始 */
+.intro {
+    background-color: #fff7e9;
+    border-radius: 50px 50px 0 0;
+    height: 205px;
+    align-items: center; /* 垂直居中 /
+    justify-content: center; / 水平居中 */
+}
+.info {
+    gap: 15px;
+}
+.bread {
+    padding-top: 24px;
+    text-align: center;
+    font-size: 16px;
+    color: #1a394a;
+    font-family: 'abc';
+}
+.title {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 32px;
+    color: #1a394a;
+    font-weight: bold;
+    font-family: 'Gensen';
+}
+.subTitle {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    color: #1a394a;
+    font-family: 'Gensen';
+}
+
+/* footer開始 */
+footer {
+    display: flex;
+    background-color: #fff7e9;
+    margin-left: 20px;
+    border-radius: 40px 0 0 0;
+    padding: 20px 100px 10px 30px;
+    /* padding: 20px 100px 20px 30px; */
+    justify-content: space-between;
+}
+
+#back-to-top {
+    display: flex;
+    padding: 40px 16px 40px 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 120px;
+    border-radius: 43px 0 0 0;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+    /* Initially hidden */
+    background-color: #ffc800;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease, bottom 1s ease;
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: -50px;
+
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+#back-to-top:hover {
+    background-color: #d1a402;
+}
+
+.copyRight {
+    font-family: 'abc', sans-serif;
+    font-size: 16px;
+}
+/* footer結束 */

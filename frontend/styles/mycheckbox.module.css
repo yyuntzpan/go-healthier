@@ -1,0 +1,71 @@
+.filter {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    color: var(--color-dark-gray);
+    gap: 15px;
+  }
+  
+  .select {
+    color: var(--color-midnight-green);
+    font-weight: 400;
+    padding-top: 15px;
+    line-height: 100%; /* 18px /
+    letter-spacing: 0.18px;
+  }
+  
+  .checkboxWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px; / 根据需要调整 */
+  }
+  
+  .checkboxes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-old-lace);
+    border: 2px solid var(--color-dark-gray);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 6px;
+  }
+  
+  .checkbox:hover {
+    border: 3px solid var(--color-midnight-green);
+  }
+  
+  .checkbox:checked {
+    background-color: var(--color-midnight-green);
+    border: 2px solid var(--color-midnight-green);
+  }
+  
+  .checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    transform: rotate(45deg);
+    width: 8px;
+    height: 15px;
+    border: solid var(--color-old-lace);
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+  }
+  
+  .checkbox:hover + label {
+    font-weight: bold;
+    color: var(--color-midnight-green);
+  }
+  
+  .checkbox:checked + label {
+    font-weight: bolder;
+    color: var(--color-midnight-green);
+  }

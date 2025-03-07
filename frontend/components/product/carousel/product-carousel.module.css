@@ -1,0 +1,68 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* 調整為您需要的最大寬度 */
+  margin: 0 auto;
+}
+
+.carousel {
+  width: 100%;
+  height: 636px;
+  overflow: hidden;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 636px;
+  object-fit: cover;
+  object-position: center;
+}
+cssCopy.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* 在大屏幕上的最大寬度 */
+  margin: 0 auto;
+}
+
+.carousel {
+  width: 100%;
+  height: auto; /* 改為自適應高度 */
+  overflow: hidden;
+}
+
+.carouselImage {
+  width: 100%;
+  height: auto; /* 改為自適應高度 */
+  max-height: 636px; /* 設置最大高度 */
+  object-fit: contain; /* 改為 contain 以確保整個圖片可見 */
+  object-position: center;
+}
+
+/* 媒體查詢，針對手機版（寬度 390px 及以下） */
+@media (max-width: 390px) {
+  .carouselContainer {
+    max-width: 100%; 
+  }
+
+  .carousel {
+    height: auto;
+  }
+
+  .carouselImage {
+    height: auto;
+    max-height: 300px; 
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .carouselContainer {
+    max-width: 70%; /* 限制寬度，避免過大 */
+  }
+
+  .carousel {
+    max-height: 500px; /* 適當減小最大高度 */
+  }
+
+  .carouselImage {
+    max-height: 500px; /* 與 .carousel 的 max-height 一致 */
+  }
+}

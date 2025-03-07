@@ -1,0 +1,25 @@
+.h6_font {
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.card {
+  border-radius: 40px;
+  width: 300px;
+  background-color: var(--color-old-lace);
+}
+.card_body2 {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 30px;
+}
+.card:hover {
+  border: 3px solid var(--color-midnight-green);
+  /* figma shadow-card */
+  box-shadow: 0px 5px 30px 0px rgba(70, 68, 65, 0.2);
+}

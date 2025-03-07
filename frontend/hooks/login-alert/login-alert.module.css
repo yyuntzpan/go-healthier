@@ -1,0 +1,60 @@
+.popup {
+  padding-top: 20px;
+  border-radius: 50px;
+}
+
+.title {
+  color: var(--color-midnight-green);
+  font-family: 'Gensen', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+
+.confirmButton,
+.cancelButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  height: 65px;
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 100%;
+  padding: 0 0 0 3px;
+}
+.confirmButton {
+  width: 100px;
+}
+.cancelButton {
+  width: 150px;
+}
+.midnightgreen {
+  background-color: var(--color-midnight-green);
+  color: var(--color-white);
+  border: 0;
+}
+.midnightgreen:hover,
+.midnightgreen:active,
+.midnightgreen:active:focus,
+.midnightgreen:focus {
+  background-color: #16303f;
+  color: var(--color-white);
+  border: 0;
+}
+
+.outline {
+  background-color: var(--color-white);
+  color: var(--color-midnight-green);
+  border: 3px solid var(--color-midnight-green);
+}
+.outline:hover,
+.outline:active,
+.outline:active:focus,
+.outline:focus {
+  background-color: var(--color-white);
+  color: var(--color-midnight-green);
+  border: 3px solid var(--color-midnight-green);
+}

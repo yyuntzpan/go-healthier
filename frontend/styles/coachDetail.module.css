@@ -1,0 +1,182 @@
+/* 白底section整體 */
+.content {
+  display: flex; /* 添加 flex 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.coach {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 调整为 flex-start 以对齐顶部 */
+  gap: 40px; /* 调整间距以平衡布局 */
+  padding: 50px 80px 110px 80px;
+  max-width: 1200px; /* 设置一个最大宽度 */
+  width: 100%; /* 确保宽度充满父容器 */
+  box-sizing: border-box; /* 包括内边距和边框在宽度计算中 */
+}
+
+.imgContainer {
+  width: 383px; /* 固定宽度 */
+  height: 254px; /* 固定高度 */
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.coachText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px; /* 减小 gap 以调整布局 */
+  max-width: 600px; /* 设置一个最大宽度 */
+  width: 100%; /* 确保宽度充满可用空间 */
+}
+
+.coachInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.coachName {
+  font-family: 'Gensen', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3.2px;
+  color: var(--color-midnight-green);
+}
+
+.coachGym {
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-midnight-green);
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%; /* 确保描述区域充满可用空间 */
+  max-width: 500px;
+}
+
+.descTitle {
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--color-midnight-green);
+}
+
+.coachDesc {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 160%;
+  color: var(--color-midnight-green);
+  width: 100%; /* 使描述区域宽度为100% */
+}
+
+.btn {
+  display: flex;
+  max-width: 500px;
+  gap: 40px;
+}
+
+.btnLike {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 40px;
+  background: var(--midnight-green, #1a394a);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-old-lace); /* 保留文本颜色 */
+}
+
+.btnReserve {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: var(--color-old-lace);
+  border-radius: 40px;
+  background: var(--midnight-green, #1a394a);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.clicked {
+  animation: 0.5s ease-in-out;
+  color: var(--color-tomato); /* 最终的颜色 */
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-top: -30px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .coach {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 8px 110px 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+  }
+
+  .imgContainer {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .coachName {
+    font-family: 'Gensen', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .coachGym {
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+  }
+}

@@ -1,0 +1,209 @@
+.box1 {
+  /* height: 540px; */
+  background-color: #fff7e9;
+  /* border-radius: 50px; */
+  font-size: 18px;
+  color: #1a394a;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  position: relative;
+  border-radius: 20px;
+}
+.content {
+  flex-grow: 1;
+}
+.place {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #1a394a;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  /* position: relative; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  /* background-color: #D8D2CB; */
+}
+/* 添加 hover 樣式 */
+.customSelect:hover,
+.custom-select:focus {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+  color: #007bff;
+  cursor: pointer;
+}
+.customSelect:hover,
+.customSelect:focus {
+  background-color: #1a394a; /* 滑鼠懸停或聚焦時的背景顏色 */
+  border-color: #007bff; /* 邊框顏色改變 */
+  color: white; /* 文字顏色改變 */
+  cursor: pointer; /* 滑鼠指標變為手形 */
+  border: white;
+}
+.eee {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+}
+.must {
+  width: 70px;
+  height: 45px;
+  border-radius: 30px;
+  background-color: var(--color-midnight-green);
+  color: white;
+  font-size: 20px;
+  padding-top: 11px;
+  padding-right: 11px;
+  margin-left: 100px;
+  padding-left: 11px;
+}
+.ccc {
+  display: flex;
+  justify-content: flex-start;
+}
+.inputSize {
+  border-radius: 50px;
+  width: 70%;
+  height: 40px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+
+  padding-left: 10px;
+}
+.btn {
+  background-color: #1a394a;
+  border-radius: 50px;
+  font-size: 25px;
+  /* width: 265px;
+  height: 65px; */
+  width: 30%;
+  color: white;
+  margin-top: 80px;
+}
+.btn:hover {
+  background-color: #fff7e9;
+  color: #1a394a;
+}
+
+@media screen and (max-width: 390px) {
+  .box1 {
+    height: 25vh;
+  }
+  .aa {
+    margin-top: 150px;
+  }
+  .customSelect {
+    margin-left: 0px;
+  }
+  .btn {
+    margin-top: 50px;
+  }
+}
+.btn,
+.btn:focus,
+.btn:hover {
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1a394a;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 2px 25px rgba(26, 57, 74, 0.5);
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn:before,
+.btn:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.btn:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #ffc107 20%, transparent 30%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ffc107 15%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+}
+.btn:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ffc107 15%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%),
+    radial-gradient(circle, #ffc107 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.btn:active {
+  transform: scale(0.9);
+  background-color: #162f3d;
+  box-shadow: 0 2px 25px rgba(26, 57, 74, 0.2);
+}
+.btn:active:before {
+  display: block;
+  animation: anim-top ease-in-out 0.75s forwards;
+}
+.btn:active:after {
+  display: block;
+  animation: anim-bottom ease-in-out 0.75s forwards;
+}
+@keyframes anim-top {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes anim-bottom {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}

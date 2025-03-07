@@ -1,0 +1,54 @@
+.userComment {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.userComment textarea {
+  width: 100%;
+  height: 100px;
+  background-color: var(--color-old-lace);
+  padding: 10px 15px;
+  margin-top: 10px;
+  resize: none;
+}
+
+.normalBorder {
+  border: 2px solid var(--color-black);
+  border-radius: 25px;
+}
+
+.error {
+  border: 2px solid var(--color-tomato);
+  border-radius: 25px;
+}
+
+.errorText {
+  color: var(--color-tomato);
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  line-height: 46px;
+  letter-spacing: 3px;
+  opacity: 0;
+}
+
+.showError {
+  opacity: 1;
+}
+
+.userCommentBtn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.wordCount {
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  line-height: 46px;
+  letter-spacing: 3px;
+}
+
+.submitBtn {
+  width: 100%;
+  max-width: 94px;
+}

@@ -1,0 +1,177 @@
+/* 白底section整體 */
+.content {
+  padding-left: 80px;
+  padding-right: 80px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+/* 課程內容 */
+.lessson {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 75px;
+  padding: 50px 80px 110px 80px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.imgContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 90%;
+  height: 40%;
+  border-radius: 40px;
+}
+
+.lessonText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.lessonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.lessonName {
+  font-family: 'Gensen', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3.2px;
+  color: var(--color-midnight-green);
+}
+
+.lessonCoach,
+.lessonGym,
+.lessonDate {
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-midnight-green);
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.descTitle {
+  font-family: 'Gensen', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--color-midnight-green);
+}
+
+.lessonDesc {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 160%;
+  color: var(--color-midnight-green);
+}
+
+/* 按鈕 */
+.btn {
+  display: flex;
+  max-width: 500px;
+  gap: 40px;
+}
+
+.btnLike {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 40px;
+  background: var(--midnight-green, #1a394a);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-old-lace); /* 保留文本颜色 */
+}
+
+.btnReserve {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: var(--color-old-lace);
+  border-radius: 40px;
+  background: var(--midnight-green, #1a394a);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.clicked {
+  animation: 0.5s ease-in-out;
+  color: var(--color-tomato); /* 最终的颜色 */
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-top: -30px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .lessson {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 8px 110px 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+  }
+
+  .lessonInfo {
+    margin-top: 30px;
+  }
+
+  .lessonName {
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+  }
+
+  .lessonCoach,
+  .lessonGym,
+  .lessonDate {
+    font-family: 'Gensen', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--color-midnight-green);
+  }
+}

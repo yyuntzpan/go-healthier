@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .context {
+        display: flex;
+        align-items: center; /* 垂直居中对齐 */
+        justify-content: center; /* 水平居中对齐 */
+    }
+
+    .image, .text {
+        margin: 0 30px; /* 设置左右间距 */
+    }
+
+    h2{
+        margin-bottom: 3px;
+    }
+    
+    .details_container {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            gap: 6px; /* 设置子元素之间的间距 */
+            width: 300px;
+        }
+    
+    .detail_item {
+            margin: 5px 0; /* 为每个子元素设置上下间距 */
+        }
+    
+    .time{
+        margin-bottom: 30px;
+    }
+
+    .lesson_desc{
+        margin-bottom: 0;
+    }
+</style>
+<body>
+    <div  class="context">
+    <div class="image">
+        <img src="../public/hero-img.png" alt="" width="300px">
+    </div>
+    <div class="details_container">
+        <h2>活力瑜珈 NT.900  </h2>
+        <div class="detail_item coach">教練：</div>
+        <div class="detail_item gym">地點：</div>
+        <div class="detail_item time">時間：</div>
+        <div class="detail_item lesson_desc">課程敘述 :</div>
+        <div class="detail_item desc">歡迎加入長青活力課程!歡迎加入長青活力課程!歡迎加入長青活力課程!</div>
+    </div>
+</div>
+</body>
+</html>

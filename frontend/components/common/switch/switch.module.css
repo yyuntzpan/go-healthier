@@ -1,0 +1,49 @@
+.switchCheckbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switchText {
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 0 9px 0;
+  align-self: end;
+  padding-right: 9px;
+  color: var(--color-midnight-blue, #1a394a);
+}
+
+.switchLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: calc(40px/0.6);
+  height: 40px;
+  background-color: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.switchButton {
+  /*content: '';*/
+  position: absolute;
+  /* top: 0px; */
+  left: 6%;
+  width: calc(40px*0.8);
+  height: calc(40px*0.8);
+  border-radius: 50%;
+  transition: 0.2s;
+  background-color: #FFF;
+  box-shadow: 0 0 2px rgba(10, 10, 10, 0.29);
+}
+
+.switchCheckbox:checked+.switchLabel .switchButton {
+  left: 93%;
+  transform: translateX(-100%);
+}
+
+.switchLabel:active .switchButton {
+  width: calc(40px*1.2)
+}

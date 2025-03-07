@@ -1,0 +1,85 @@
+.mobile_footer {
+  display: none;
+}
+.PC_footer {
+  display: flex;
+  background-color: #fff7e9;
+  margin-left: 20px;
+  border-radius: 40px 0 0 0;
+  padding: 20px 100px 20px 30px;
+  justify-content: space-between;
+}
+
+.PC_footer a,
+.mobile_footer a {
+  color: var(--color-black);
+}
+
+.PC_footer p,
+.mobile_footer p {
+  margin-bottom: 0;
+}
+
+.icon {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.footer_icon {
+  height: 30px;
+  width: 30px;
+}
+
+.icon > li a:hover {
+  color: var(--color-tomato);
+}
+
+.footer_title {
+  margin: 24px 0;
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.footer_item {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 160%;
+}
+
+.copyRight {
+  font-family: 'Huninn', sans-serif;
+  font-size: 16px;
+  text-align: right;
+}
+
+/*當視窗寬度小到一定程度時換成另一種footer*/
+@media (max-width: 750px) {
+  .PC_footer {
+    display: none;
+  }
+
+  .mobile_footer {
+    display: flex;
+    gap: 50px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff7e9;
+    border-radius: 40px 0 0 0;
+    padding: 20px 60px;
+    margin-left: 20px;
+  }
+
+  .footer_info .mobile_footer_img {
+    width: 80%;
+  }
+  .content {
+    display: none;
+    padding-left: 20px;
+  }
+  .content.active {
+    display: block;
+  }
+}

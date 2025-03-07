@@ -1,0 +1,245 @@
+/* header 相關樣式開始 */
+.navbarPC {
+  margin: 20px 0px 25px 0px;
+  padding: 0px 50px 0px 50px;
+  display: flex;
+  height: 66px;
+}
+
+.navbarSP {
+  display: none;
+}
+
+.navbarSPLink {
+  display: inline-block;
+  color: var(--color-black);
+}
+
+/* logo與右邊間距 */
+.logo {
+  margin-right: 21px;
+}
+.logoPhoto {
+  width: 150px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 30px;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 26px;
+  height: 28px;
+  width: 114px;
+  background-color: transparent;
+  border-radius: 50px;
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  transition: background-color 0.2s linear 0s;
+}
+
+.list a {
+  position: relative;
+  display: block;
+  width: 114px;
+  transition: all 0.2s linear 0s;
+  text-align: center;
+  transition: text-indent 0.2s linear 0s;
+}
+
+.linkArrow {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 13px;
+  width: 11px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.2s linear 0s;
+}
+
+.list li a:hover {
+  background-color: var(--color-yellow);
+  border-radius: 50px;
+}
+
+.list a:hover {
+  text-indent: 20px;
+}
+
+.list a:hover .linkArrow {
+  opacity: 1;
+}
+
+.icons {
+  display: flex;
+  margin-left: auto; /* 將 icons 列表推到最右邊 */
+  justify-content: flex-end;
+  margin-top: 18px; /* 讓icons對齊navlink文字下緣用 與align-items擇一 */
+  width: 100%;
+  max-width: 186px;
+  gap: 15px;
+  /* gap:30px; */
+  /* align-items: flex-end; */
+}
+
+.icons .member {
+  color: black;
+  margin-right: 10px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+.icons .cart {
+  color: black;
+  margin-right: 10px;
+  height: 32px;
+  width: 32px;
+}
+/* header 相關樣式結束 */
+
+/* page-title 相關樣式開始 */
+/* TODO: 修改 page-title 字體 + 間距 */
+.intro {
+  background-color: #fff7e9;
+  border-radius: 50px 50px 0 0;
+  /* height: 205px; */
+  align-items: center; /* 垂直居中 /
+  justify-content: center; / 水平居中 */
+}
+
+.info {
+  gap: 15px;
+}
+
+.bread {
+  padding-top: 24px;
+  text-align: center;
+  font-size: 16px;
+  color: #1a394a;
+  font-family: 'Huninn';
+}
+
+.title {
+  padding-top: 15px;
+  text-align: center;
+  color: #1a394a;
+  line-height: 100%;
+}
+
+.subTitle {
+  padding-top: 10px;
+  padding-left: 1px;
+  text-align: center;
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 1px;
+  color: #1a394a;
+}
+/* section 相關樣式結束 */
+
+/* 手機板 */
+@media (max-width: 992px) {
+  .navbarPC {
+    display: none;
+  }
+  .navbarSP {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navToggleBtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* right: 16px; */
+    /* 只能用在chrome PC */
+    z-index: 1030;
+    border-radius: 0 0 0 30px;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+  }
+
+  .navToggleIcon {
+    height: 56px;
+    width: 56px;
+  }
+
+  .closeBtnRow button {
+    background-color: transparent;
+    border: 0;
+    height: 52px;
+    width: 52px;
+  }
+
+  .closeBtnIcon {
+    height: 52px;
+    width: 52px;
+  }
+
+  .icons {
+    flex-direction: column;
+    margin: 0;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .icons li {
+    display: flex;
+    align-items: center;
+  }
+
+  .icons svg {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+  }
+
+  .memberAvatar {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin: 10px 10px 10px 0;
+  }
+  .logo {
+    margin-right: 0;
+  }
+  .logoPhoto {
+    width: 162px;
+  }
+}
+.badge {
+  color: red;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+}
+.cartContainer {
+  position: relative;
+  display: inline-block;
+}
+.move {
+  transition: transform 0.9s ease-out;
+}
+.move:hover {
+  transform: scale(1.1, 1.1);
+}

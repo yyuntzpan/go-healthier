@@ -1,0 +1,12 @@
+.togglePrevComment {
+  display: flex;
+}
+
+.togglePrevComment button {
+  background-color: transparent;
+  border: 0;
+  font-family: 'Gensen', sans-serif;
+  font-size: 22px;
+  line-height: 46px;
+  margin-right: 30px;
+}

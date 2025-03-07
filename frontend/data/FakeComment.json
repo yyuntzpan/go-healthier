@@ -1,0 +1,32 @@
+[  
+  {
+  "comment_id": "1",
+  "update_at": "2天前",
+  "article_subtype": "體能鍛鍊",
+  "main": 1,
+  "article_id_fk":1,
+  "member_id_fk": 1,
+  "member_name": "membername",
+  "comment_content": "讚1"
+},
+{
+  "comment_id": "1",
+  "update_at": "2天前",
+  "article_subtype": "體能鍛鍊",
+  "main": 2,
+  "article_id_fk":1,
+  "member_id_fk": 1,
+  "member_name": "membername",
+  "comment_content": "讚2"
+},
+{
+  "comment_id": "1",
+  "update_at": "2天前",
+  "article_subtype": "體能鍛鍊",
+  "main": 3,
+  "article_id_fk":1,
+  "member_id_fk": 1,
+  "member_name": "membername",
+  "comment_content": "讚3"
+}
+]

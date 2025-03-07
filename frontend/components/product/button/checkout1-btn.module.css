@@ -1,0 +1,15 @@
+.btn {
+  background-color: #1a394a;
+  border-radius: 50px;
+  font-size: 18px;
+  width: 265px;
+  height: 65px;
+  color: white;
+}
+.kkk {
+  display: flex;
+  padding-top: 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 74px;
+}

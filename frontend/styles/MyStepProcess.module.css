@@ -1,0 +1,73 @@
+.MyStepProcess{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.test {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #1A394A;
+    border-radius: 50%;
+    background-color:   white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Otomanopee', sans-serif;
+    font-weight: 400;
+  }
+  
+  .checkFount {
+    font-size: 20px;
+    font-family: 'gensen',sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.8px;
+    margin-top: 14px;
+  }
+  
+  .size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 0;
+    padding-top: 40px;
+    text-align: center;
+  }
+  
+  .dashContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .dash {
+    display: inline-block;
+    border: 2px dashed var(--color-gray-50);
+    width:100%;
+    height: 2px;
+  }
+  .activeStep{
+    width: 80px;
+    height: 80px;
+    border: 8px solid #1A394A;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Otomanopee', sans-serif;
+    font-weight: 400;
+
+  }
+  @media screen and (max-width: 600px) {
+    .checkFount{
+      width: 70px;
+    }
+  }

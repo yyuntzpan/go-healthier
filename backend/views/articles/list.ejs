@@ -1,0 +1,107 @@
+<%- include("../parts/html-head") %> <%- include("../parts/navbar") %>
+
+<style>
+  button a{
+    text-decoration: none;
+    color: white;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="?page=<%= (page-1) >= 1 ? (page-1) : 1%>"
+              >prev</a
+            >
+          </li>
+          <% let interval = 5; let start = page - (page % interval); let end =
+          start + 5; for(let i=start; i<=end; i++) if(i>=1 && i<= totalPages ){
+          const qs2 = {...qs, page: i}; %>
+          <li class="page-item <%= i===page ? 'active' : '' %>">
+            <a
+              class="page-link"
+              href="?<%= new URLSearchParams(qs2).toString(); %>"
+              ><%= i %>
+              </a>
+          </li>
+          <% } %>
+          <li class="page-item">
+            <a class="page-link" href="?page=<%= page+1 %>">next</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            name="keyword"
+            value="<%= qs.keyword ? qs.keyword : '' %>"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </nav>
+      <button class="btn btn-primary">
+        <a href="/articles/add">新增文章</a>
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">DEL</th>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Upload Date</th>
+            <th scope="col">Last Update</th>
+            <th scope="col">Description</th>
+            <th scope="col">EDIT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let r of rows){ %>
+          <tr>
+            <td>
+              <a href="javascript:deleteOne(<%= r.article_id %>);">DEL</a>
+            </td>
+            <td><%= r.article_id %></td>
+            <td><%= r.article_title %></td>
+            <td><%= r.article_subtype %></td>
+            <td><%= r.article_publish_date %></td>
+            <td><%= r.update_at %></td>
+            <td><%= r.article_desc %></td>
+            <td><a href="/articles/edit/<%= r.article_id %>">EDIT</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include("../parts/scripts") %>
+
+<script>
+  const deleteOne = (article_id) => {
+    if (confirm(`是否要刪除編號為 ${article_id} 的資料?`)) {
+      fetch(`/articles/api/${article_id}`, {
+        method: "DELETE",
+      })
+        .then((r) => r.json())
+        .then((result) => {
+          console.log(JSON.stringify(result));
+          if (result.success) {
+            location.reload();
+          }
+        });
+    }
+  };
+</script>
+
+<%- include("../parts/html-foot") %>

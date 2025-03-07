@@ -1,0 +1,12 @@
+.user_select {
+  border-radius: 40px;
+  padding: 0;
+  height: 80px;
+  max-width: 420px;
+  width: 327px;
+  text-align: center;
+}
+
+.user_select:focus {
+  border: 3px solid var(--color-midnight-green);
+}

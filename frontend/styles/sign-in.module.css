@@ -1,0 +1,188 @@
+/*以下為會員登入、註冊、忘記密碼相關的基本樣式版型*/
+/* 這在styles */
+/*字型*/
+.h6 {
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.h4 {
+  font-family: 'Gensen', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+.p {
+  font-family: 'huninn', sans-serif;
+  font-size: 18x;
+  line-height: 160%;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.warp {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 80px;
+  margin: 40px auto;
+}
+.user_input {
+  border-radius: 40px;
+  padding: 8px 10px;
+  width: 100%;
+}
+.user_label {
+  margin-bottom: 15px;
+}
+.user_title {
+  max-width: 640px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+.title_describe {
+  padding: 20px 0;
+}
+.user_container {
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+.form_group_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.form_group {
+  display: flex;
+  flex-direction: column;
+}
+.form_group_center {
+  text-align: center;
+}
+.btn_md {
+  width: 265px;
+  height: 65px;
+  border: none;
+  background-color: var(--color-yellow);
+  border-radius: 50px;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 5px;
+}
+.forget_password {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--color-gray-50);
+  padding-bottom: 10px;
+}
+.fa-chevron-right {
+  padding-right: 10px;
+}
+.a {
+  color: var(--color-midnight-green);
+  text-decoration: none;
+}
+.warp2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.warp2 > p {
+  color: var(--color-midnight-green);
+}
+
+.third_party_login a {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_wrapper {
+  width: 60px; /* 固定寬度 */
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_wrapper {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+}
+/* 把icon定位在input裡 */
+.input_container {
+  position: relative;
+}
+.myicon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-midnight-green); /* 睜眼閉眼及勾勾時的icon顏色 */
+}
+
+.error_message {
+  color: var(--color-tomato);
+  /* display: none; */
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+}
+.tomatoP {
+  font-family: 'huninn', sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.buttonReset {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 錯誤時的驚嘆號顏色 */
+.myiconError {
+  color: var(--color-tomato);
+}
+
+@media screen and (max-width: 600px) {
+  .warp {
+    padding: 0 16px;
+  }
+  .user_container {
+    padding: 0;
+  }
+  .btn_md {
+    width: 100%;
+  }
+  .form,
+  .form_group_center {
+    width: 100%;
+  }
+}

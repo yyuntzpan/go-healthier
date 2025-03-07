@@ -1,0 +1,50 @@
+/* 包裹整個輸入帳號及密碼的表單 */
+.form_group_flex{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  margin-bottom: 10px;
+}
+/* 包裹一組label及input */
+.form_group{
+  display: flex;
+  flex-direction: column;
+}
+/* 表單下面的置中按鈕 */
+.form_group_center{
+  text-align: center;
+}
+
+/* 輸入框的樣式 */
+.user_input{
+    border-radius: 40px;
+    padding: 8px 10px;
+  }
+  /* 把icon定位在input裡 */
+.input_container{
+    position: relative;
+  }
+  .myicon{
+    position: absolute;
+    right:5px;
+    bottom: 8px;
+    display: none;
+    cursor: pointer;
+  }
+  .erro_message{
+    color: var(--color-tomato);
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+/* 睜眼閉眼及勾勾時的icon顏色 */
+.myicon i {
+    color: var(--color-midnight-green);
+    font-size: 24px;
+}
+/* 錯誤時的驚嘆號顏色 */
+.myicon i.fa-circle-exclamation {
+    color: var(--color-tomato);
+    font-size: 24px;
+}

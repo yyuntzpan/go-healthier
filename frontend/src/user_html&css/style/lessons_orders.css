@@ -1,0 +1,22 @@
+@media screen and (max-width: 950px){
+    .menu{
+        display:none ;
+      }
+      .warp{
+        padding:0 16px;
+        border-radius:0;
+        background-color: var(--color-white);
+    }
+    .userinfo{
+        background: white;
+        padding:0;
+        border-radius:0;
+        width: 100%;
+        box-shadow:none;
+    }
+    
+    
+}
+@media screen and (max-width: 600px){
+    
+}

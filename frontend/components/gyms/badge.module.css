@@ -1,0 +1,12 @@
+.badgeRow {
+  gap: 8px;
+}
+
+.badge {
+  background-color: var(--color-light-gray);
+  padding: 5px 8px;
+  margin-right: 8px;
+  border-radius: 50px;
+  text-align: center;
+  color: black;
+}

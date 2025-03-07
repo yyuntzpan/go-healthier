@@ -1,0 +1,252 @@
+.radius50 {
+  border-radius: 50px 50px 0 0;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+
+
+/* gym_id 詳細頁 新增樣式從此開始*/
+.imgContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-left: 16px;
+  gap: 13px;
+  scrollbar-width: none;
+  margin: 32px 0;
+}
+
+.imgContainerPC {
+  display: none;
+}
+
+
+
+.coverImg {
+  width: 85dvw;
+  border-radius: 40px;
+}
+
+.imgGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 16px;
+  gap: 13px;
+  width: 100%
+}
+
+.otherImg {
+  width: 85dvw;
+  border-radius: 40px;
+}
+
+.basicInfo {
+  padding: 0 8px;
+}
+
+.btn {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.btnLike {
+  display: flex;
+  width: 40dvh;
+  min-width: 146px;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 40px;
+  border: 3px solid var(--color-midnight-green);
+  background: white;
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-midnight-green);
+  /* 保留文本颜色 */
+}
+
+.btnReserve {
+  display: flex;
+  width: 60dvh;
+  height: 60px;
+  padding: 18px 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: white;
+  border-radius: 40px;
+  background: var(--midnight-green, #1a394a);
+  font-family: 'Gensen', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  gap: 48px;
+  padding: 0 8px;
+}
+
+.h5 {
+  color: var(--color-midnight-green);
+  margin-bottom: 24px;
+}
+
+/* gym_id 詳細頁 新增樣式從此結束*/
+
+@media (width >=768px) {
+  .container {
+    width: 960px;
+
+  }
+
+  .titleBox {
+    padding: 0 8px
+  }
+
+  .flexRow {
+    height: 70vh;
+    margin: 0 80px 50px 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+
+  }
+
+  /* gym_id 詳細頁 新增樣式從此開始*/
+  .imgContainer {
+    display: none;
+  }
+
+  .imgContainerPC {
+    max-width: 455px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-left: 0px;
+    gap: 13px;
+    margin: 0px 0px;
+  }
+
+  .coverImg {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .imgGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 0px;
+    gap: 8px;
+  }
+
+  .otherImg {
+    height: 50px;
+    width: calc(100%/6 - 8px);
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* .btn {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    gap: 16px;
+    margin: 20px 0;
+  } */
+
+  /* .btnLike {
+    display: flex;
+    width: 40dvh;
+    min-width: 146px;
+    height: 60px;
+    padding: 18px 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    border-radius: 40px;
+    border: 3px solid var(--color-midnight-green);
+    background: white;
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--color-midnight-green);
+    /* 保留文本颜色 */
+
+
+  /* .btnReserve {
+    display: flex;
+    width: 60dvh;
+    height: 60px;
+    padding: 18px 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    color: white;
+    border-radius: 40px;
+    background: var(--midnight-green, #1a394a);
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+  } */
+
+  /* .icon {
+    display: flex;
+    align-items: center;
+  } */
+
+
+  .clicked {
+    animation: 0.5s ease-in-out;
+    color: var(--color-tomato);
+    /* 最终的颜色 */
+  }
+
+  .basicInfo {
+    padding: 0 8px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+}
+
+@media(width >=992px) {}

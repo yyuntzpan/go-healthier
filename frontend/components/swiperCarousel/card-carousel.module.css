@@ -1,0 +1,52 @@
+.swiperCarousel {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.swiperCarousel swiper-container {
+  width: calc(100%);
+  /* padding-left: 10px; */
+}
+
+.swiperCarousel swiper-slide {
+  width: fit-content;
+  /* transition: display 0.3s ease;
+  display: block; */
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.navBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  border: 0;
+  border-radius: 50px;
+  background: var(--color-black);
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+}
+
+.navIcon {
+  color: var(--color-white);
+  height: 28px;
+  width: 28px;
+}
+
+.prevBtn {
+  left: 0;
+}
+
+.nextBtn {
+  right: 20px;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}

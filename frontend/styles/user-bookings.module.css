@@ -1,0 +1,146 @@
+.userinfo_bookings {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+.user_title {
+  margin-right: 32px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+.title_describe {
+  padding: 20px 0;
+}
+.user_select {
+  margin: 22px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.year_num {
+  font-family: 'Otomanopee';
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+.num {
+  font-family: 'Otomanopee', sans-serif;
+  line-height: 160%;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+.month {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin-bottom: 50px;
+  width: 70%;
+  justify-content: center;
+}
+.month .num {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+.month .num.active {
+  background-color: var(--color-midnight-green);
+  color: var(--color-white);
+}
+.date_card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 27px;
+  padding: 20px 30px;
+  background-color: var(--color-old-lace);
+  color: var(--color-black);
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* 行程卡active時 */
+.card.active {
+  background-color: var(--color-midnight-green);
+  color: var(--color-yellow);
+}
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 增加行間距 */
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule_item {
+  display: flex;
+  align-items: flex-start; /* 改為 flex-start 以便於對齊 */
+  padding: 10px;
+  border: 3px dashed var(--color-midnight-green);
+  border-radius: 10px;
+  width: 50%; /* 確保每個 item 佔滿寬度 */
+}
+.iconImg {
+  margin-right: 10px;
+}
+.time_and_gym {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1080px) {
+  .edit_btn {
+    justify-content: center;
+  }
+  .btn_md {
+    width: 150px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .userinfo_bookings {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .month {
+    justify-content: center;
+    /* gap:30px; */
+  }
+  .date_card {
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  .schedule {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .month {
+    justify-content: center;
+    gap:30px;
+  }
+  .date_card {
+    gap: 10px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+  .schedule {
+    width: 100%;
+  }
+  .schedule_item {
+    width: 100%;
+  }
+}

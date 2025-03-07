@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .select{
+        color: #1A394A;
+        font-weight: 400;
+        line-height: 100%; /* 18px */
+        letter-spacing: 0.18px;
+    }
+
+    .custom-radio{
+        /* background-color: aquamarine; */
+        color: #464441;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    input[type=checkbox] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: #E8E2D8;
+            border: 2px solid #464441;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:hover {
+            border: 3px solid #1A394A;
+        }
+
+        input[type=checkbox]:checked {
+            background-color: #1A394A;
+            border: 2px solid #1A394A;
+        }
+
+        input[type=checkbox]:checked::after {
+            content: 'v';
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -10%);
+            font-size: 16px;
+        }
+
+        input[type=checkbox]:hover + label{
+            font-weight: bold;
+            color: #1A394A;
+        }
+        input[type=checkbox]:checked + label {
+            font-weight: bolder;
+            color: #1A394A;
+        }
+
+        label {
+            cursor: pointer;
+        }
+</style>
+<body>
+    <div class="custom-radio">
+        <p class="select">請選擇類別　｜</p>
+        <input type="checkbox" id="male" name="sex">
+        <label for="male">男性</label>
+     
+        <input type="checkbox" id="female" name="sex">
+        <label for="female">女性</label>
+     
+        <input type="checkbox" id="other" name="sex">
+        <label for="other">其它</label>
+    
+    </div>
+    
+</body>
+</html>

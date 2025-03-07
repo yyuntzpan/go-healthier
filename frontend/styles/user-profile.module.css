@@ -1,0 +1,81 @@
+.userinfo_profile {
+  padding: 32px 0 32px 32px;
+}
+.p_font {
+  margin-bottom: 0;
+}
+.user_title {
+  margin-right: 32px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+.title_describe {
+  padding: 20px 0;
+}
+.card_1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 40px 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+.card_2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 80px;
+}
+.more {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* max-width: 1000px; */
+}
+.more > a {
+  color: var(--color-midnight-green);
+  font-weight: bold;
+}
+.more > a:hover {
+  color: var(--color-dark-yellow);
+}
+
+.fav_search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 950px) {
+  .more {
+    flex-basis: 90%;
+  }
+  .userinfo_profile {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card_1 {
+    gap: 25px;
+    margin: 40px 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .card_2 {
+    justify-content: center;
+    padding: 0 8px;
+  }
+  .fav_search {
+    grid-template-columns: 1fr;
+    justify-items: center; /* 新增：置中網格項目 */
+  }
+}

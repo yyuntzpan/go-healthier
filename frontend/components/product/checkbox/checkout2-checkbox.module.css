@@ -1,0 +1,20 @@
+.ppp {
+  display: flex;
+  width: 202px;
+  padding: 0px 22px;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  color: #464441;
+
+  margin-bottom: 40px;
+}
+.customCheckbox {
+  display: flex;
+  width: 23px;
+  height: 23px;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}

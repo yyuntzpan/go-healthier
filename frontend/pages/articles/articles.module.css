@@ -1,0 +1,99 @@
+.articleTypes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 300px 300px;
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+
+.typeGrid a {
+  height: 100%;
+  width: 100%;
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typeGrid a h3 {
+  transition: font-size 0.1s ease-in;
+}
+
+.typeGrid a:hover h3 {
+  font-size: 52px;
+}
+
+.typeGrid {
+  background-color: var(--color-gray-50);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: background-size 0.1s ease-in;
+}
+
+.typeGrid:hover {
+  /* background-size: 110%; */
+}
+
+.typeGrid:nth-child(1) {
+  background-image: url('/articles-img/240117_voice03.png');
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.typeGrid:nth-child(2) {
+  background-image: url('/articles-img/louis-hansel-9CjvlbUGhY-unsplash.jpg');
+  grid-column-start: 4;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.typeGrid:nth-child(3) {
+  background-image: url('/articles-img/julia-zyablova-S1v7hVUiCg0-unsplash.jpg');
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.typeGrid:nth-child(4) {
+  background-image: url('/articles-img/priscilla-du-preez-aPa843frIzI-unsplash.jpg');
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.typeGrid:nth-child(5) {
+  background-image: url('/articles-img/iStock-1040323860.jpg');
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.latest,
+.popular {
+  margin-bottom: 100px;
+}
+
+.cardImg {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .articleTypes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .typeGrid {
+    height: 339px;
+  }
+}

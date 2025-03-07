@@ -1,0 +1,152 @@
+.radius50 {
+  border-radius: 50px 50px 0 0;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.searchAndSwitch {
+  /* 寫得很開心 結果用boostrap沒套 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 地圖樣式 */
+
+
+.mapContainerStyle {
+  margin: 0;
+  height: 55vh;
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  margin-top: -50px;
+  /* box-shadow: 0px -4px 50px 0px rgba(0, 0, 0, 0.10); */
+}
+
+
+
+.indexContainer {
+  position: relative
+}
+
+.zIndex {
+  margin-top: 50px;
+  position: absolute;
+  z-index: 1;
+  width: 100%
+}
+
+/* gym_id 詳細頁 新增樣式從此開始*/
+
+
+@media (width >=768px) {
+  .container {
+    padding: 0 80px;
+  }
+
+
+
+  .flexRow {
+
+    height: 70vh;
+    margin: 0 80px 50px 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+
+  }
+
+  .mapContainerStyle {
+    flex: 1;
+    height: 100%;
+    margin: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25) inset;
+    position: relative;
+  }
+
+  .mapContainerStyle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 4px 20px 0px rgba(0, 0, 0, 0.25);
+    /* 調整陰影效果 */
+    pointer-events: none;
+    /* 確保不影響地圖的交互 */
+    z-index: 5;
+    /* 確保在地圖之上 */
+  }
+
+  .zIndex {
+    margin-top: 0;
+    position: relative;
+  }
+
+  /* gym_id 詳細頁 新增樣式從此開始*/
+  .btn {
+    display: flex;
+    max-width: 500px;
+    gap: 40px;
+  }
+
+  .btnLike {
+    display: flex;
+    width: 150px;
+    height: 60px;
+    padding: 18px 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    border-radius: 40px;
+    background: var(--midnight-green, #1a394a);
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--color-old-lace);
+    /* 保留文本颜色 */
+  }
+
+  .btnReserve {
+    display: flex;
+    width: 150px;
+    height: 60px;
+    padding: 18px 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    color: var(--color-old-lace);
+    border-radius: 40px;
+    background: var(--midnight-green, #1a394a);
+    font-family: 'Gensen', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 5px;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .clicked {
+    animation: 0.5s ease-in-out;
+    color: var(--color-tomato);
+    /* 最终的颜色 */
+  }
+
+  
+
+}
+
+@media(width >=992px) {}

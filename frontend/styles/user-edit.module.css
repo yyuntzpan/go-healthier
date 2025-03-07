@@ -1,0 +1,187 @@
+.userinfo_edit {
+  padding: 32px;
+}
+.userinfo_edit p {
+  margin-bottom: 0;
+}
+.userinfo_edit select {
+  border-radius: 40px;
+  padding: 10px;
+  max-width: 420px;
+  width: 120px;
+  text-align: center;
+}
+.userinfo_edit input {
+  border-radius: 40px;
+  padding: 8px 10px;
+  width: 240px;
+}
+.userinfo_edit input:focus,
+.userinfo_edit select:focus {
+  border: 3px solid var(--color-midnight-green);
+}
+.btn_md {
+  width: 265px;
+  height: 65px;
+  border: none;
+  background-color: var(--color-yellow);
+  border-radius: 50px;
+}
+.h6_font {
+  font-family: 'Gensen', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.user_title {
+  margin-right: 32px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+.title_describe {
+  padding: 20px 0;
+}
+.user_select {
+  margin: 22px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.user_details {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.information,
+.address,
+.change_password {
+  border-bottom: 1px solid var(--color-gray-50);
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.change_password {
+  border: none;
+}
+.change_password label {
+  display: block;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.change_password{
+  position: relative;
+  padding-bottom: 60px;
+}
+.form_group ,.form_groupMb{
+  display: flex;
+  gap: 20px;
+  padding-bottom: 60px;
+  align-items: center;
+  flex-direction: row;
+}
+/* 把icon定位在input裡 */
+.input_container {
+  width: 240px;
+  position: relative;
+}
+.myicon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-midnight-green);/* 睜眼閉眼及勾勾時的icon顏色 */
+}
+.edit_btn {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
+  /* margin-right: 35px; */
+  max-width: 1200px;
+  margin-top: 30px;
+}
+.edit_btn > a {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+}
+.error_message {
+  color: var(--color-tomato);
+  /* display: none; */
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+}
+.tomatoP{
+  font-family:'huninn',sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+/* 錯誤時的驚嘆號顏色 */
+.myiconError {
+  color: var(--color-tomato);
+}
+/* 第三方登入的會員不用填寫密碼 */
+.disabled {
+  background-color: var(--color-gray-50);
+  cursor: not-allowed;
+}
+@media screen and (max-width: 1080px) {
+  .edit_btn {
+    justify-content: center;
+  }
+  .btn_md {
+    width: 150px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .change_password, .form_group ,.form_groupMb {
+    padding-bottom: 30px;
+  }
+  .form_groupMb{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .userinfo_edit {
+    padding: 0;
+  }
+  .form_group input {
+    max-width: 350px;
+  }
+  .flex, .form_group, .form_groupMb{
+    padding-bottom: 0;
+  }
+  .form_groupMb{
+    align-items: flex-start;
+  }
+  .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+  }
+}

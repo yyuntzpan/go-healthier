@@ -1,0 +1,87 @@
+[
+  {
+    "order_id": "1",
+    "member_id": "1",
+    "first_item": {
+      "id": "1",
+      "name": "優質緊身褲1",
+      "quantity": "3",
+      "price": "90",
+      "imgSrc": "defaultImg.png"
+    },
+    "totalQuantity": "3",
+    "totalPrice": "270"
+  },
+  {
+    "order_id": "2",
+    "member_id": "1",
+    "first_item": {
+      "id": "4",
+      "name": "優質緊身褲1",
+      "quantity": "2",
+      "price": "90",
+      "imgSrc": "defaultImg.png"
+    },
+    "other_items": [
+      {
+        "id": "5",
+        "name": "優質緊身褲2",
+        "quantity": "4",
+        "price": "80",
+        "imgSrc": "defaultImg.png"
+      }
+    ],
+    "totalQuantity": "6",
+    "totalPrice": "500"
+  },
+  {
+    "order_id": "3",
+    "member_id": "1",
+    "first_item": {
+      "id": "6",
+      "name": "優質緊身褲1",
+      "quantity": "2",
+      "price": "90",
+      "imgSrc": "defaultImg.png"
+    },
+    "other_items": [
+      {
+        "id": "7",
+        "name": "優質緊身褲2",
+        "quantity": "4",
+        "price": "80",
+        "imgSrc": "defaultImg.png"
+      },
+      {
+        "id": "8",
+        "name": "充滿能量的能量棒1",
+        "quantity": "5",
+        "price": "20",
+        "imgSrc": "defaultImg.png"
+      },
+      {
+        "id": "9",
+        "name": "充滿能量的能量棒2",
+        "quantity": "6",
+        "price": "10",
+        "imgSrc": "defaultImg.png"
+      },
+      {
+        "id": "10",
+        "name": "按摩球1",
+        "quantity": "1",
+        "price": "50",
+        "imgSrc": "defaultImg.png"
+      },
+      {
+        "id": "11",
+        "name": "按摩球2",
+        "quantity": "2",
+        "price": "40",
+        "imgSrc": "defaultImg.png"
+      }
+    ],
+    "totalQuantity": "18",
+    "totalPrice": "790"
+  }
+]

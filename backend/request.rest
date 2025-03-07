@@ -1,0 +1,11 @@
+GET http://localhost:3001/try-post-form
+
+### separator
+
+POST http://localhost:3001/try-post-form
+Content-Type: application/json
+
+{"name":"shin",
+"age":30}
+
+## separator

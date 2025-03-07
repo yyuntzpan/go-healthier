@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的訂單</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/user_basic.css">
+    <link rel="stylesheet" href="./style/orders.css">
+    <link rel="stylesheet" href="../../styles/globals.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav class="bread" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">我的帳號</li>
+        </ol>
+    </nav>
+    <div class="warp">
+        <div class="menu">
+            <div class="user">
+                <img src="./pic/user_avator.png" alt="">
+                <h5>你阿罵</h5>
+            </div>
+            <nav class="user_sidebar">
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>主頁</p>
+                </a>
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>檔案</p>
+                </a>
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>預約</p>
+                </a>
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>課程</p>
+                </a>
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>訂單</p>
+                </a>
+                <a class="inline-link" href="#"><i class="fa-solid fa-user"></i>
+                    <p>收藏</p>
+                </a>
+            </nav>
+        </div>
+        <div class="userinfo">
+            <div class="user_title">
+                <h4>你阿罵，讓我們啟動健康的新里程吧！</h4>
+            </div>
+            <div class="user_select">
+                <select id="" name="">
+                    <option value="0">下拉選擇類別</option>
+                    <option value="1">已預約的場館</option>
+                    <option value="2">已預約的課程</option>
+                    <!-- 青菜加加 -->
+                </select>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="ordernumber">
+                    <p>訂單編號:FJWLR654115</p>
+                    <p>已完成</p>
+                </div>
+                <div class="first_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other_item">
+                    <img class="product_image" src="../../public/product-img/photo6.jpg" alt="">
+                    <div class="product_detail">
+                        <div class="product_description">
+                            <p class="product_name">充滿能量的能量棒</p>
+                            <p class="specifications">規格:草莓口味</p>
+                        </div>
+                        <div class="product_price_warpper">
+                            <p class="quantity">x10</p>
+                            <p class="price">$30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <p>點擊展開已購買的商品</p>
+                </div>
+                <div class="sum">
+                    <p>總商品數:3</p>
+                    <p>訂單金額:$2700</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="icon">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-line"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </div>
+        <div>
+            <img src="./pic/logo-forNow-small.svg" alt="">
+            <p>Copyright &copy; 2024 All Rights Reserved. </p>
+        </div>
+    </footer>
+    <!-- mobile的footer -->
+    <footer class="mobile_footer">
+        <div class="footer_info">
+            <li><a href="#" class="footer_title">
+                    <h6>網站資訊</h6></i>
+                </a></li>
+            <div class="content">
+                <li><a href="#">
+                        <p>關於我們</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>聯絡我們</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>隱私政策</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>服務條款</p>
+                    </a></li>
+            </div>
+            <li><a href="#" class="footer_title">
+                    <h6>我想要運動</h6>
+                </a></li>
+            <div class="content">
+                <li><a href="#">
+                        <p>去那裡運動?</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>有那些課程?</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>教練資歷</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>運動商城</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>知識補給</p>
+                    </a></li>
+            </div>
+            <li><a href="#" class="footer_title">
+                    <h6>常見問題</h6>
+                </a></li>
+            <div class="content">
+                <li><a href="#">
+                        <p>如何預約課程?</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>哪個教練適合我?</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>怎麼買商品?</p>
+                    </a></li>
+                <li><a href="#">
+                        <p>如何加入會員</p>
+                    </a></li>
+            </div>
+        </div>
+        <div class="mobile_footer_img">
+            <img src="./pic/logo-forNow-mini.svg" alt="">
+        </div>
+    </footer>
+
+
+    <button id="back-to-top" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+        <p>Top</p>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            //取得order
+            const order = document.querySelectorAll('.order');
+            //從取得的order中再取得該order裡的其他商品及手風琴
+            order.forEach(order => {
+                const accordion = order.querySelector('.accordion');
+                const otherItem = order.querySelectorAll('.other_item');
+
+                //是否被展開:預設false
+                let isExpanded = false;
+
+                accordion.addEventListener('click', function () {
+                    if (isExpanded) {
+                        // 如果已經展開，則隱藏所有商品
+                        otherItem.forEach(item => {
+                            item.style.display = 'none';
+                        });
+                        accordion.querySelector('p').textContent = '點擊展開已購買的商品';
+                    } else {
+                        // 如果未展開，則顯示所有商品
+                        otherItem.forEach(item => {
+                            item.style.display = 'flex';
+                        });
+                        accordion.querySelector('p').textContent = '點擊收起';
+                    }
+
+                    // 切換展開狀態
+                    isExpanded = !isExpanded;
+                });
+
+                // 初始狀態：隱藏其他商品
+                otherItem.forEach(item => {
+                    item.style.display = 'none';
+                })
+            })
+        });
+
+    </script>
+    <script src="scroll_to_top.js"></script>
+    <script src="mobile_footer.js"></script>
+</body>
+
+</html>

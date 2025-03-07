@@ -1,0 +1,37 @@
+.cardsize {
+  width: 300px; /* 設置固定的寬度，可以根據需要調整 */
+  height: auto; /* 設置固定的高度，可以根據需要調整 */
+  border-radius: 40px;
+  background: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 30px 0px rgba(70, 68, 65, 0.2);
+  overflow: hidden; /* 防止圖片超出容器範圍 */
+  position: relative;
+  margin-right: 20px;
+}
+.cardsize img {
+  width: 100%; /* 圖片寬度設置為 100% 以適應背景容器 */
+  height: 100%; /* 圖片高度設置為 100% 以適應背景容器 */
+  object-fit: cover; /* 保持圖片比例，並覆蓋容器 */
+  border-radius: 40px; /* 讓圖片的邊角與背景容器一致 */
+}
+.card {
+  position: absolute; /* 設置絕對定位 */
+  bottom: 0; /* 從容器的頂部開始 */
+  right: 0; /* 從容器的左側開始 */
+  width: 90%; /* 佔據容器的全部寬度 */
+  height: 103px; /* 佔據容器的全部高度 */
+  display: flex; /* 使用 flex 來居中對齊文字 */
+  flex-direction: column; /* 讓文字按列排列 */
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  color: white; /* 文字顏色設置為白色，便於在深色圖片上可見 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* 添加文字陰影，提升可見度 */
+  padding: 10px; /* 添加內邊距，防止文字靠近邊緣 */
+  background: rgba(0, 0, 0, 0.5); /* 半透明背景色，提升文字的可讀性 */
+  border-radius: 45px 0px 0px 0px; /* 讓文字容器的邊角與背景容器一致 */
+  opacity: 0.8;
+  background: var(--midnight-green, #1a394a);
+  padding: 20px 31px 10px 31px;
+  mix-blend-mode: plus-darker;
+}

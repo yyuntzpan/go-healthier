@@ -1,0 +1,125 @@
+.mainWithMargin {
+  margin-top: 30px;
+}
+
+.cardText {
+  padding-bottom: 5px;
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #1a394a;
+}
+
+.btn1 {
+  border-radius: 50px;
+  /* width: 50%;
+  height: 80%; */
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 12px;
+}
+
+.imagradius {
+  border-radius: 0px 0px 0px 50px;
+  /* margin-bottom: 40px; */
+}
+
+.cardsize {
+  /* width: 18.75rem;
+  height: 22.875rem; */
+  width: 100%;
+  border-radius: 40px;
+  background: #fff;
+  margin-bottom: 20px;
+  /* shadow-card */
+  box-shadow: 0px 5px 30px 0px rgba(70, 68, 65, 0.2);
+  overflow: hidden;
+}
+/* 卡片會動 */
+.move {
+  transition: transform 0.5s ease-out;
+}
+.move:hover {
+  transform: scale(1.1, 1.1);
+}
+/* 卡片會動 */
+.container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.search {
+  position: relative;
+  width: 100%;
+  float: left;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.searchBar {
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  border: 3px solid #8c8983;
+  background-color: #fff7e9;
+  border-radius: 100px;
+  padding-left: 100px;
+  display: flex;
+  padding: 24px 50px 24px 0px;
+  align-items: center;
+  gap: 15px;
+  padding-left: 60px;
+}
+.searchBtn {
+  width: 60px;
+  height: 60px;
+  background-color: #8c8983;
+  color: #efe9e7;
+  outline: none;
+  border: 2px solid #8c8983;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+/* .iconLarge {
+  width: 24px;
+  height: 24px;
+} */
+/* .color1{
+background-color:#D9D9D9;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+margin-right: 7px; */
+/* padding-bottom: 19px;
+margin-left: 10px;
+margin-top: 20px; */
+/* } */
+/* .color2{
+background-color: #7ACEC3;
+border: 3px solid #FFF ;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+filter: drop-shadow(0px 0px 0px #7ACDC3);
+margin-right: 7px;
+}
+.color3{
+background-color: #E8D6C4;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+margin-right: 7px;
+}
+.color4{
+  background-color: #7ABBDF;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 7px;
+  } */
+.cardbody {
+  height: 100px;
+}

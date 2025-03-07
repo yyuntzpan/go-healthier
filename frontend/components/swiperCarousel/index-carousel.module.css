@@ -1,0 +1,14 @@
+.swiperSeparator {
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  height: 182px;
+  width: calc(100% + 80px);
+  background-color: var(--color-old-lace);
+  border-radius: 50px 0 0 50px;
+
+}
+
+.carouselRow {
+  margin-bottom: calc(86px - 55px);
+}

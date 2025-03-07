@@ -1,0 +1,133 @@
+<%- include("../parts/html-head") %> <%- include("../parts/navbar") %>
+
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form name="form1" onsubmit="sendData(event)" oninput="formChange(event)">
+            <h2>新增項目</h2>
+            <div class="mb-3">
+              <label for="article_title" class="form-label">文章標題: </label>
+              <input type="text" class="form-control" id="article_title" name="article_title">
+              <div id="article_titleHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_subtype" class="form-label">文章分類: </label>
+              <input type="number" class="form-control" id="article_subtype" name="article_subtype">
+              <div id="article_subtypeHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_publish_date" class="form-label">文章上架時間: </label>
+              <input type="date" class="form-control" id="article_publish_date" name="article_publish_date">
+              <div id="article_publish_dateHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_desc" class="form-label">文章編按: </label>
+              <textarea class="form-control" id="article_desc" name="article_desc" cols="30" rows="3"></textarea>
+              <div id="article_descHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="article_content" class="form-label">文章內容: </label>
+              <textarea class="form-control" id="article_content" name="article_content" cols="30" rows="3"></textarea>
+              <div id="article_contentHelp" class="form-text"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackDrop" tabindex="-1" aria-labelledby="staticBackDropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackDropLabel">確認新增</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        成功新增
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">繼續新增</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='/article-book'">回到列表</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../parts/scripts") %> 
+
+<script>
+
+  let myState = {
+    article_title: '',
+    article_subtype: '',
+    article_publish_date: '',
+    article_desc: '',
+    article_content: '',
+  }
+  const formChange = e=>{
+    // console.log(e.target.name, e.target.value);
+    myState = {...myState, [e.target.name]: e.target.value};
+    console.log(myState);
+  };
+
+  const sendData = e => {
+    e.preventDefault();
+
+    let isPass = true;
+
+    if (isPass) {
+      const fd = new FormData(document.form1);
+      fetch('', {
+        method: 'POST',
+        body: JSON.stringify(myState),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(r => r.json()).then(data => {
+        console.log(data);
+        if (data.success) {
+          myModal.show();
+        } else {
+
+        }
+      }).catch(ex => console.log(ex))
+    }
+    const myModal = new bootstrap.Modal('#staticBackDrop');
+    // const avatar = document.uploadForm.avatar;
+    //   avatar.onchange = (event) => {
+    //     const fd = new FormData(document.uploadForm);
+
+    //     fetch("upload-avatar-api2.php", {
+    //       method: "POST",
+    //       body: fd,
+    //     })
+    //       .then((r) => r.json())
+    //       .then((result) => {
+    //         if(result.success){
+    //           // result.filename
+    //           img_file.value = result.filename;
+    //           myimg.src = `../imgs/${pageName}/${result.filename}`;
+    //         }
+
+    //       })
+    //       .catch((ex) => console.log(ex));
+    //   };
+
+  }
+
+
+
+</script>
+
+<%- include("../parts/html-foot") %>

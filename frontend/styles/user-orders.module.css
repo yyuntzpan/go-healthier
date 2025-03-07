@@ -1,0 +1,26 @@
+.userinfo_orders {
+  padding: 32px;
+}
+
+.user_title {
+  margin-right: 32px;
+  border-bottom: 1px solid var(--color-gray-50);
+  color: var(--color-midnight-green);
+}
+
+.user_select {
+  margin: 22px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 950px) {
+  .userinfo_orders {
+    padding: 0;
+  }
+}

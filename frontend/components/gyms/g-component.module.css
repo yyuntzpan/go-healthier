@@ -1,0 +1,214 @@
+.radius50 {
+  border-radius: 50px 50px 0 0;
+}
+
+
+.container {
+  padding: 0 16px;
+}
+
+
+
+.searchAndSwitch {
+  /* margin: 16px 16px; */
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.filterButton {
+  border-radius: 50px 0px 0 50px;
+  height: 48px;
+  padding: 0 16px;
+  justify-content: flex-end;
+  align-items: center;
+  letter-spacing: 3px;
+  /* font-size: 16px; */
+}
+
+
+/* checkbox */
+.fontColor {
+  color: var(--color-midnight-green);
+}
+
+.filter {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: normal;
+  color: var(--color-dark-gray);
+  gap: 15px;
+}
+
+.select {
+  color: var(--color-midnight-green);
+  font-weight: 400;
+  /* padding-top: 15px; */
+  line-height: 100%;
+  /* 18px */
+  letter-spacing: 0.18px;
+  cursor: pointer;
+
+}
+
+.label {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  /* 28.8px */
+  letter-spacing: 1px;
+  color: var(--color-dark-gray);
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* 根据需要调整 */
+  /* margin-bottom: 10px; */
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-old-lace);
+  border: 2px solid var(--color-dark-gray);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox:hover {
+  border: 3px solid var(--color-midnight-green);
+}
+
+.checkbox:checked {
+  background-color: var(--color-midnight-green);
+  border: 2px solid var(--color-midnight-green);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 15px;
+  border: solid var(--color-old-lace);
+  border-width: 0 3px 3px 0;
+  border-radius: 2px;
+}
+
+.checkbox:hover+label {
+  font-weight: bold;
+  color: var(--color-midnight-green);
+}
+
+.checkbox:checked+label {
+  font-weight: bolder;
+  color: var(--color-midnight-green);
+}
+
+.h20 {
+  height: 20px;
+}
+
+
+/* Offcanvas  */
+.offcanvas {
+  background-color: var(--color-old-lace);
+  max-width: 50vw;
+  border-radius: 25px 0 0 25px;
+
+}
+
+
+.offcanvasHeader {
+  background-color: var(--color-midnight-green);
+  color: white;
+}
+
+.offcanvasBody {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.offcanvasBody .filter {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobileFilter {
+  background-color: var(--color-midnight-green);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.flexBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+}
+
+.clearBtn {
+  position: absolute;
+  right: -34px;
+  top: 50%;
+  transform: translateY( -50%);
+  background: none;
+  border: none;
+  margin-bottom:10px ;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearBtn svg {
+  width: 24px;
+  height: 24px;
+  color: #4a4a4a;
+  /* 您可以根據需要調整顏色 */
+}
+
+.clearBtn:hover svg {
+  color: #2a2a2a;
+  /* 懸停時的顏色 */
+}
+
+/* MapErea */
+
+@media (width >=768px) {
+  .container {
+    padding: 0 80px;
+  }
+
+
+
+
+
+}
+
+@media(width >=992px) {}
