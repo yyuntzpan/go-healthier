@@ -42,12 +42,15 @@ export default function Index({ lessons }) {
 
   const fetchLessons = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/lessons/api`, {
-        params: {
-          code_desc: selectedCategories.join('-'),
-          keyword: searchKeyword,
-        },
-      })
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_URL}/lessons/api`,
+        {
+          params: {
+            code_desc: selectedCategories.join('-'),
+            keyword: searchKeyword,
+          },
+        }
+      )
       console.log('API response:', response.data)
       if (response.data.success) {
         setAllLessons(response.data.rows)
@@ -75,7 +78,7 @@ export default function Index({ lessons }) {
     const fetchHotLessons = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:3001/lessons/api/hotLessons'
+          `${process.env.NEXT_PUBLIC_URL}/lessons/api/hotLessons`
         )
         if (response.data.success) {
           setHotLessons(response.data.hotLessons)

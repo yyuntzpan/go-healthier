@@ -17,7 +17,7 @@ export default function Checkout() {
     try {
       const amount = parseInt(lesson.lesson_price.replace(/,/g, ''), 10)
       const response = await axios.get(
-        `http://localhost:3001/payment?amount=${amount}&lessonId=${
+        `${process.env.NEXT_PUBLIC_URL}/payment?amount=${amount}&lessonId=${
           lesson.lesson_id
         }&lessonName=${encodeURIComponent(
           lesson.lesson_name
@@ -46,7 +46,7 @@ export default function Checkout() {
       if (lessonId) {
         try {
           const response = await axios.get(
-            `http://localhost:3001/lessons/api/${lessonId}`
+            `${process.env.NEXT_PUBLIC_URL}/lessons/api/${lessonId}`
           )
           if (response.data.success) {
             setLesson(response.data.lesson)

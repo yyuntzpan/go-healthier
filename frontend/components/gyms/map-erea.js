@@ -233,7 +233,7 @@ export default function MapErea({ gymsData, searchTerm }) {
   useEffect(() => {
     const fetchApiKey = async () => {
       try {
-        const url = `http://localhost:3001/gyms/mapkey`
+        const url = `${process.env.NEXT_PUBLIC_URL}/gyms/mapkey`
         const res = await fetch(url) // 向後端請求 API Key
         const data = await res.json()
         setApiKey(data.apiKey)

@@ -17,7 +17,7 @@ export default function ProductDetail() {
   const [photodata, setPhotoData] = useState([])
 
   const getProduct = async (pid) => {
-    const url = `http://localhost:3001/product/api/${pid}`
+    const url = `${process.env.NEXT_PUBLIC_URL}/product/api/${pid}`
 
     try {
       const res = await fetch(url)

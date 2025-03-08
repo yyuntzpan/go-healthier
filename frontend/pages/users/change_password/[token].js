@@ -31,7 +31,9 @@ export default function ForgetPassword() {
 
   useEffect(() => {
     if (token) {
-      fetch(`http://localhost:3001/users/verify_reset_token?token=${token}`)
+      fetch(
+        `${process.env.NEXT_PUBLIC_URL}/users/verify_reset_token?token=${token}`
+      )
         .then((response) => {
           if (!response.ok) {
             throw new Error('Token verification failed')
@@ -62,7 +64,7 @@ export default function ForgetPassword() {
 
     try {
       const response = await fetch(
-        'http://localhost:3001/users/changePassword ',
+      `${process.env.NEXT_PUBLIC_URL}/users/changePassword`,
         {
           method: 'POST',
           headers: {

@@ -108,7 +108,7 @@ export default function Edit() {
     const fetchCity = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3001/users/selectWhere/city'
+          `${process.env.NEXT_PUBLIC_URL}/users/selectWhere/city`
         )
         const data = await response.json()
         setCity(data)
@@ -126,7 +126,7 @@ export default function Edit() {
       if (selectedCity !== 0) {
         try {
           const response = await fetch(
-            `http://localhost:3001/users/selectWhere/district/${selectedCity}`
+            `${process.env.NEXT_PUBLIC_URL}/users/selectWhere/district/${selectedCity}`
           )
           const data = await response.json()
           setDistricts(data)
@@ -253,7 +253,7 @@ export default function Edit() {
       }
 
       const updateResponse = await fetch(
-        `http://localhost:3001/users/updateProfile/${auth.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/users/updateProfile/${auth.id}`,
         {
           method: 'POST',
           headers: {

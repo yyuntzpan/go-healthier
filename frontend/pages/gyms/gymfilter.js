@@ -8,7 +8,7 @@ export default function GymFilters({
   clearAllCheckboxes,
 }) {
   const router = useRouter()
-  const url = 'http://localhost:3001/gyms/features'
+  const url = `${process.env.NEXT_PUBLIC_URL}/gyms/features`
   const [filterOptions, setFilterOptions] = useState([])
 
   useEffect(() => {

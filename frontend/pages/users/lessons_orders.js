@@ -20,7 +20,7 @@ export default function LessonsOrders() {
       if (auth.id) {
         try {
           const response = await axios.get(
-            `http://localhost:3001/lessons/user-lessons/${auth.id}`,
+            `${process.env.NEXT_PUBLIC_URL}/lessons/user-lessons/${auth.id}`,
             {
               headers: { Authorization: `Bearer ${auth.token}` },
             }

@@ -25,7 +25,7 @@ export default function GymDetail({ gymId }) {
     if (!auth || !gym_id) return
     try {
       const response = await fetch(
-        `http://localhost:3001/gyms/check-fav/${auth.id}/${gym_id}`
+        `${process.env.NEXT_PUBLIC_URL}/gyms/check-fav/${auth.id}/${gym_id}`
       )
 
       if (!response.ok) {
@@ -47,7 +47,7 @@ export default function GymDetail({ gymId }) {
     try {
       const method = isClicked ? 'DELETE' : 'POST'
       const response = await fetch(
-        `http://localhost:3001/gyms/api/favorites/${auth.id}/${gym_id}`,
+        `${process.env.NEXT_PUBLIC_URL}/gyms/api/favorites/${auth.id}/${gym_id}`,
         {
           method: method,
           headers: {
@@ -81,7 +81,7 @@ export default function GymDetail({ gymId }) {
   const fetchGymData = async (gymId) => {
     if (!router.isReady) return null
 
-    const url = `http://localhost:3001/gyms/api/${gymId}`
+    const url = `${process.env.NEXT_PUBLIC_URL}/gyms/api/${gymId}`
     try {
       const response = await fetch(url)
       const data = await response.json()
