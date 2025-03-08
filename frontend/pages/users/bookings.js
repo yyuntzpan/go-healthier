@@ -23,7 +23,7 @@ export default function LessonsOrders() {
 
     try {
       const response = await axios.get(
-        `http://localhost:3001/users/bookings/${auth.id}`
+        `${process.env.NEXT_PUBLIC_URL}/users/bookings/${auth.id}`
       )
       if (response.data.success) {
         setAllBookings(response.data.bookings)

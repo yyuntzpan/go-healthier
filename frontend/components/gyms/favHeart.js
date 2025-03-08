@@ -12,7 +12,7 @@ export default function FavHeart(data) {
     if (!auth || !data.id) return
     try {
       const response = await fetch(
-        `http://localhost:3001/gyms/check-fav/${auth.id}/${data.id}`
+        `${process.env.NEXT_PUBLIC_URL}/gyms/check-fav/${auth.id}/${data.id}`
       )
 
       if (!response.ok) {
@@ -34,7 +34,7 @@ export default function FavHeart(data) {
     try {
       const method = isClicked ? 'DELETE' : 'POST'
       const response = await fetch(
-        `http://localhost:3001/gyms/api/favorites/${auth.id}/${data.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/gyms/api/favorites/${auth.id}/${data.id}`,
         {
           method: method,
           headers: {

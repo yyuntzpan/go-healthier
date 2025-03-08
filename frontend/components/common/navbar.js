@@ -16,7 +16,7 @@ import styles from './layout.module.css'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { useAuth } from '../../context/auth-context'
-const defaultAvatar = 'http://localhost:3001/users/' // 用來做預設頭像的位置
+const defaultAvatar = `${process.env.NEXT_PUBLIC_URL}/users/` // 用來做預設頭像的位置
 import ShoppingCart from '../product/shoppingCart'
 import { useState, useEffect } from 'react'
 import { useCart } from '@/hooks/product/use-cart'

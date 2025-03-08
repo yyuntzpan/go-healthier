@@ -73,7 +73,9 @@ export default function ProductList() {
 
     // const query = new URLSearchParams({ id: productId })
     // console.log(router)
-    const url = `http://localhost:3001/product/api?${queryParams.toString()}`
+    const url = `${
+      process.env.NEXT_PUBLIC_URL
+    }/product/api?${queryParams.toString()}`
 
     fetch(url)
       .then((r) => r.json())

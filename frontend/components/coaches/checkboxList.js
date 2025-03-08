@@ -10,7 +10,7 @@ const CheckboxList = ({ checked, onCategoryChange }) => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:3001/coaches/categories'
+          `${process.env.NEXT_PUBLIC_URL}/coaches/categories`  
         )
         if (response.data.success) {
           setCategories(response.data.categories)

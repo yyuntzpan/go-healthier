@@ -26,7 +26,7 @@ export default function Profile() {
       router.push(`/users/sign_in?returnUrl=${returnUrl}`)
     } else {
       // 如果用戶已登入，獲取用戶的預約資料
-      fetch(`http://localhost:3001/users/myReservations/${userId}`)
+      fetch(`${process.env.NEXT_PUBLIC_URL}/users/myReservations/${userId}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {

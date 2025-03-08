@@ -18,7 +18,7 @@ export default function LessonsOrders() {
         }
 
         const response = await fetch(
-          `http://localhost:3001/users/myOrders/${userId}`
+          `${process.env.NEXT_PUBLIC_URL}/users/myOrders/${userId}`
         )
         if (!response.ok) {
           throw new Error('Network response was not ok')

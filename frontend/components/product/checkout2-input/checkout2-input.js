@@ -38,7 +38,7 @@ export default function Checkout2Input() {
   const onSubmit = async (e) => {
     e.preventDefault()
     const num = generateRandomOrderId(10) // 在組件加載時生成訂單編號
-    const r = await fetch('http://localhost:3001/product/addorder', {
+    const r = await fetch(`${process.env.NEXT_PUBLIC_URL}/product/addorder`, {
       //後端伺服器的路徑
       method: 'POST',
       headers: {

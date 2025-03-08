@@ -24,7 +24,7 @@ export default function LayoutUser({ children, title = 'myProfile' }) {
   }
 
   const titleResult = titleMap[title] || '會員中心'
-  const defaultAvatar = 'http://localhost:3001/users/'
+  const defaultAvatar = `${process.env.NEXT_PUBLIC_URL}/users/`
 
   const handAvatarClick = () => {
     // fileInput.current.click()
@@ -43,7 +43,7 @@ export default function LayoutUser({ children, title = 'myProfile' }) {
     formData.append('avatar', file)
     formData.append('member_id', auth.id)
     try {
-      const response = await fetch('http://localhost:3001/avatar-upload', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/avatar-upload`, {
         method: 'POST',
         body: formData,
       })

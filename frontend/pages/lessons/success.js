@@ -17,14 +17,14 @@ export default function Success() {
         try {
           // 獲取課程詳情
           const response = await axios.get(
-            `http://localhost:3001/lessons/api/${lessonId}`
+            `${process.env.NEXT_PUBLIC_URL}/lessons/api/${lessonId}`
           )
           if (response.data.success) {
             setLesson(response.data.lesson)
 
             // 發出更新訂單狀態的請求
             const updateResponse = await axios.post(
-              'http://localhost:3001/lessons/update-order',
+              `${process.env.NEXT_PUBLIC_URL}/lessons/update-order`,
               { order_id: orderNumber },
               {
                 headers: {

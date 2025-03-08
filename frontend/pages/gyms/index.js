@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Layout3 from '@/components/layout/layout3'
 import styles from './gyms.module.css'
 import SearchBar from '@/components/common/searchbar/searchbar'
 import Switch from '@/components/common/switch/switch'
@@ -30,11 +29,9 @@ export default function Gyms() {
   const handleCompositionChange = (composing) => {
     setIsComposing(composing)
   }
-  //用fetch請後端搜尋資料的函式
+ 
   const fetchGymsData = () => {
-    //const qq = new URLSearchParams(router.query)
-    // console.log(qq)
-    const url = `http://localhost:3001/gyms/api?keyword=${searchTerm}&features=${selectedFeatures}&friendly=${boo}`
+    const url = `${process.env.NEXT_PUBLIC_URL}/gyms/api?keyword=${searchTerm}&features=${selectedFeatures}&friendly=${boo}`
     if (router.isReady) {
       fetch(url)
         .then((response) => response.json())

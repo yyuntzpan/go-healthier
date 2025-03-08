@@ -37,7 +37,7 @@ export default function Favorites() {
   const fetchGymFavorites = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/users/favorites-gym/${auth.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/users/favorites-gym/${auth.id}`,
         {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
@@ -77,7 +77,7 @@ export default function Favorites() {
   const fetchFavorites = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/users/favorites/${auth.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/users/favorites/${auth.id}`,
         {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
@@ -93,7 +93,7 @@ export default function Favorites() {
   const fetchLessonFavorites = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/users/favorites-lesson/${auth.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/users/favorites-lesson/${auth.id}`,
         {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
@@ -108,10 +108,13 @@ export default function Favorites() {
 
   const handleRemoveLessonFavorite = async (lessonId) => {
     try {
-      await axios.delete('http://localhost:3001/users/remove-lesson-favorite', {
-        data: { member_id: auth.id, lesson_id: lessonId },
-        headers: { Authorization: `Bearer ${auth.token}` },
-      })
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_URL}/users/remove-lesson-favorite`,
+        {
+          data: { member_id: auth.id, lesson_id: lessonId },
+          headers: { Authorization: `Bearer ${auth.token}` },
+        }
+      )
       setLessonFavorites(
         lessonFavorites.filter((lesson) => lesson.lesson_id !== lessonId)
       )
@@ -122,10 +125,13 @@ export default function Favorites() {
 
   const handleRemoveFavorite = async (coachId) => {
     try {
-      await axios.delete('http://localhost:3001/users/remove-favorite', {
-        data: { member_id: auth.id, coach_id: coachId },
-        headers: { Authorization: `Bearer ${auth.token}` },
-      })
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_URL}/users/remove-favorite`,
+        {
+          data: { member_id: auth.id, coach_id: coachId },
+          headers: { Authorization: `Bearer ${auth.token}` },
+        }
+      )
       // 更新狀態，移除被取消收藏的教練
       setCoachFavorites(
         coachFavorites.filter((coach) => coach.coach_id !== coachId)
@@ -179,7 +185,7 @@ export default function Favorites() {
   const fetchArticlesFavorites = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/users/favorites-articles/${auth.id}`,
+        `${process.env.NEXT_PUBLIC_URL}/users/favorites-articles/${auth.id}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`,

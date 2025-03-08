@@ -27,7 +27,7 @@ export default function Reservation() {
       if (coachId) {
         try {
           const response = await axios.get(
-            `http://localhost:3001/coaches/api/${coachId}`
+            `${process.env.NEXT_PUBLIC_URL}/coaches/api/${coachId}`
           )
           if (response.data.success) {
             setSelectedCoach(response.data.coach)
@@ -130,7 +130,7 @@ export default function Reservation() {
       })
 
       const response = await axios.post(
-        'http://localhost:3001/users/add/coachReserve',
+        `${process.env.NEXT_PUBLIC_URL}/users/add/coachReserve`,
         {
           reserve_name: formData.name,
           reserve_phone: formData.phone,

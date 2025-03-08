@@ -1,50 +1,39 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import GymCardSpot from './gymCard-spot'
 import styles from './map-erea.module.css'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {
-  Autocomplete,
   GoogleMap,
   useJsApiLoader,
   Marker,
   InfoWindow,
 } from '@react-google-maps/api'
 
-export default function MapErea({ gymsData, searchTerm }) {
+function GoogleMapsComponent({ apiKey, gymsData, searchTerm }) {
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: apiKey,
+  })
   const mapStyles = {
     height: '100%',
     width: '100%',
   }
+
   const [center, setCenter] = useState({
     lat: 25.04510954594513,
     lng: 121.52343310812854,
   })
-  const [selectedMarker, setSelectedMarker] = useState('')
+  const [selectedMarker, setSelectedMarker] = useState(null)
+  const [map, setMap] = useState(null)
+  const [sortedGyms, setSortedGyms] = useState([])
+  const [geoJsonData, setGeoJsonData] = useState(null)
+
   const handleMapClick = () => {
     setSelectedMarker(null)
   }
-  const handleSearch = () => {
-    if (isLoaded) {
-      const geocoder = new window.google.maps.Geocoder()
-      geocoder.geocode({ address: searchTerm }, (results, status) => {
-        if (status === 'OK') {
-          const { lat, lng } = results[0].geometry.location
-          setCenter({ lat: lat(), lng: lng() })
-          // calculateDistances({ lat: lat(), lng: lng() })
-          if (map) {
-            map.panTo({ lat: lat(), lng: lng() })
-          }
-        } else {
-          console.log(
-            'Geocode was not successful for the following reason: ' + status
-          )
-        }
-      })
-    }
-  }
 
-  const gymsDatatoGeoJson = (gymsData) => {
+  const gymsDatatoGeoJson = useCallback((gymsData) => {
     if (!Array.isArray(gymsData)) {
       console.error('Invalid gymsData Structure .應該要是 Array', gymsData)
       return null
@@ -75,12 +64,32 @@ export default function MapErea({ gymsData, searchTerm }) {
         },
       })),
     }
-  }
-  const [sortedGyms, setSortedGyms] = useState([])
-  const [geoJsonData, setGeoJsonData] = useState(null)
+  }, [])
+
+  const handleSearch = useCallback(() => {
+    if (isLoaded) {
+      const geocoder = new window.google.maps.Geocoder()
+      geocoder.geocode({ address: searchTerm }, (results, status) => {
+        if (status === 'OK') {
+          const { lat, lng } = results[0].geometry.location
+          setCenter({ lat: lat(), lng: lng() })
+          // calculateDistances({ lat: lat(), lng: lng() })
+          if (map) {
+            map.panTo({ lat: lat(), lng: lng() })
+          }
+        } else {
+          console.log(
+            'Geocode was not successful for the following reason: ' + status
+          )
+        }
+      })
+    }
+  }, [isLoaded, searchTerm, map])
 
   const calculateDistances = useCallback(
-    (oringin) => {
+    (origin) => {
+      if (!isLoaded || !geoJsonData) return
+
       const service = new window.google.maps.DistanceMatrixService()
       const gyms = geoJsonData.features
 
@@ -91,7 +100,7 @@ export default function MapErea({ gymsData, searchTerm }) {
       }
 
       const promises = batches.map((batch) => {
-        new Promise((resolve) => {
+        return new Promise((resolve) => {
           service.getDistanceMatrix(
             {
               origins: [origin],
@@ -126,44 +135,35 @@ export default function MapErea({ gymsData, searchTerm }) {
         setSortedGyms(sortedGyms)
       })
     },
-    [geoJsonData]
+    [isLoaded, geoJsonData]
   )
 
-  useEffect(() => {
-    if (gymsData) {
-      const covertedData = gymsDatatoGeoJson(gymsData)
-      setGeoJsonData(covertedData)
-      // console.log(geoJsonData, 'geoJsonData')
-      handleSearch()
-    }
-  }, [gymsData])
-
-  const [map, setMap] = useState(null)
-  const onLoad = useCallback(
-    (map) => {
-      const bounds = new window.google.maps.LatLngBounds(center)
-      map.fitBounds(bounds)
-      setMap(map)
-    },
-    [center]
-  )
+  const onLoad = useCallback((mapInstance) => {
+    setMap(mapInstance)
+  }, [])
 
   const onUnmount = useCallback(() => {
     setMap(null)
   }, [])
 
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    // libraries: ['places'],
-  })
+  useEffect(() => {
+    if (gymsData && apiKey) {
+      const covertedData = gymsDatatoGeoJson(gymsData)
+      setGeoJsonData(covertedData)
+    }
+  }, [gymsData, apiKey])
+
+  useEffect(() => {
+    if (isLoaded && searchTerm) {
+      handleSearch()
+    }
+  }, [isLoaded, searchTerm, handleSearch])
+
   if (!isLoaded) {
-    return (
-      <h5 style={{ textAlign: 'center', lineHeight: '300px' }}>Loading...</h5>
-    )
+    return <Skeleton count={1} width={'100%'} height={'100%'} />
   }
 
-  return isLoaded ? (
+  return (
     <GoogleMap
       mapContainerStyle={mapStyles}
       zoom={13}
@@ -187,23 +187,25 @@ export default function MapErea({ gymsData, searchTerm }) {
           },
         }}
       />
-      {geoJsonData.features.map((feature) => (
-        <Marker
-          key={feature.properties.id}
-          position={{
-            lat: feature.geometry.coordinates[1],
-            lng: feature.geometry.coordinates[0],
-          }}
-          onClick={() => setSelectedMarker(feature)}
-          title={feature.properties.gym_name}
-          options={{
-            icon: {
-              url: '/fi-sr-marker.svg',
-              scaledSize: new window.google.maps.Size(50, 50),
-            },
-          }}
-        />
-      ))}
+      {geoJsonData &&
+        geoJsonData.features &&
+        geoJsonData.features.map((feature) => (
+          <Marker
+            key={feature.properties.id}
+            position={{
+              lat: feature.geometry.coordinates[1],
+              lng: feature.geometry.coordinates[0],
+            }}
+            onClick={() => setSelectedMarker(feature)}
+            title={feature.properties.gym_name}
+            options={{
+              icon: {
+                url: '/fi-sr-marker.svg',
+                scaledSize: new window.google.maps.Size(50, 50),
+              },
+            }}
+          />
+        ))}
       {selectedMarker && (
         <InfoWindow
           position={{
@@ -223,9 +225,37 @@ export default function MapErea({ gymsData, searchTerm }) {
       )}
       {/* {console.log(selectedMarker.properties)} */}
     </GoogleMap>
-  ) : (
-    <>
-      <Skeleton count={1} width={'100%'} height={'100%'} />
-    </>
+  )
+}
+
+export default function MapErea({ gymsData, searchTerm }) {
+  const [apiKey, setApiKey] = useState(null)
+  useEffect(() => {
+    const fetchApiKey = async () => {
+      try {
+        const url = `${process.env.NEXT_PUBLIC_URL}/gyms/mapkey`
+        const res = await fetch(url) // 向後端請求 API Key
+        const data = await res.json()
+        setApiKey(data.apiKey)
+      } catch (error) {
+        console.error('Error fetching API key:', error)
+      }
+    }
+    fetchApiKey()
+  }, [])
+
+  if (!apiKey) {
+    return (
+      <h5 style={{ textAlign: 'center', lineHeight: '300px' }}>
+        Fetching API Key...
+      </h5>
+    )
+  }
+  return (
+    <GoogleMapsComponent
+      apiKey={apiKey}
+      gymsData={gymsData}
+      searchTerm={searchTerm}
+    />
   )
 }

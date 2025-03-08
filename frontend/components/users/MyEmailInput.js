@@ -49,7 +49,7 @@ const MyEmailInput = ({
             if (checkEmailExists) {
               // 發送請求檢查 email 是否已存在
               const res = await fetch(
-                `http://localhost:3001/users/cheak_email`,
+                `${process.env.NEXT_PUBLIC_URL}/users/cheak_email`,
                 {
                   method: 'POST',
                   headers: {

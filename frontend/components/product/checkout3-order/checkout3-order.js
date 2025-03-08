@@ -28,7 +28,7 @@ export default function Checkout3Order() {
       )
 
       const response = await axios.get(
-        `http://localhost:3001/product-payment?amount=${amount}&orderId=${router.query.order_id}`
+        `${process.env.NEXT_PUBLIC_URL}/product-payment?amount=${amount}&orderId=${router.query.order_id}`
       )
       if (response.data.htmlContent) {
         const tempDiv = document.createElement('div')
@@ -51,7 +51,7 @@ export default function Checkout3Order() {
   useEffect(() => {
     if (router.isReady) {
       fetch(
-        `http://localhost:3001/product/orderdetail?order_id=${router.query.order_id}`
+        `${process.env.NEXT_PUBLIC_URL}/product/orderdetail?order_id=${router.query.order_id}`
       )
         .then((response) => response.json())
         .then((data) => {

@@ -30,12 +30,15 @@ export default function Index() {
 
   const fetchCoaches = debounce(async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/coaches/api`, {
-        params: {
-          code_desc: selectedCategories.join('-'),
-          keyword: searchKeyword,
-        },
-      })
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_URL}/coaches/api`,
+        {
+          params: {
+            code_desc: selectedCategories.join('-'),
+            keyword: searchKeyword,
+          },
+        }
+      )
       console.log('API response:', response.data)
       if (response.data.success) {
         setAllCoaches(response.data.rows)
@@ -50,7 +53,7 @@ export default function Index() {
     if (auth.token) {
       try {
         const response = await axios.get(
-          `http://localhost:3001/users/favorites/${auth.id}`,
+          `${process.env.NEXT_PUBLIC_URL}/users/favorites/${auth.id}`,
           {
             headers: { Authorization: `Bearer ${auth.token}` },
           }
@@ -86,14 +89,17 @@ export default function Index() {
 
     try {
       if (favorites.includes(coachId)) {
-        await axios.delete('http://localhost:3001/users/remove-favorite', {
-          data: { member_id: auth.id, coach_id: coachId },
-          headers: { Authorization: `Bearer ${auth.token}` },
-        })
+        await axios.delete(
+          `${process.env.NEXT_PUBLIC_URL}/users/remove-favorite`,
+          {
+            data: { member_id: auth.id, coach_id: coachId },
+            headers: { Authorization: `Bearer ${auth.token}` },
+          }
+        )
         setFavorites(favorites.filter((id) => id !== coachId))
       } else {
         await axios.post(
-          'http://localhost:3001/users/add-favorite',
+          `${process.env.NEXT_PUBLIC_URL}/users/add-favorite`,
           { member_id: auth.id, coach_id: coachId },
           { headers: { Authorization: `Bearer ${auth.token}` } }
         )

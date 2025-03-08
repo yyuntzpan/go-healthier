@@ -14,6 +14,7 @@ export default function Detail() {
   const { pid } = router.query
   const [isLoading, setIsLoading] = useState(true)
   const { auth } = useAuth()
+  const API_URL = process.env.NEXT_PUBLIC_URL
 
   useEffect(() => {
     const fetchLesson = async () => {
@@ -21,7 +22,7 @@ export default function Detail() {
         setIsLoading(true)
         try {
           const response = await axios.get(
-            `http://localhost:3001/lessons/api/${pid}`
+            `${API_URL}/lessons/api/${pid}`
           )
           if (response.data.success) {
             setLesson(response.data.lesson)
@@ -39,10 +40,7 @@ export default function Detail() {
     fetchLesson()
   }, [pid])
 
-  // const handleClick = () => {
-  //   setIsClicked(!isClicked)
-  // }
-
+  
   const handlePurchase = async () => {
     // 如果沒有登入token就強制導入登入頁面
     if (!auth.token) {
@@ -51,7 +49,7 @@ export default function Detail() {
       try {
         // 向後端發送創建訂單請求
         const response = await axios.post(
-          'http://localhost:3001/lessons/create-order',
+          `${API_URL}/lessons/create-order`,
           {
             member_id: auth.id,
             lesson_id: lesson.lesson_id,
@@ -87,7 +85,7 @@ export default function Detail() {
       if (auth.token && pid) {
         try {
           const response = await axios.get(
-            `http://localhost:3001/users/check-favoriteLesson/${auth.id}/${pid}`,
+            `${API_URL}/users/check-favoriteLesson/${auth.id}/${pid}`,
             {
               headers: { Authorization: `Bearer ${auth.token}` },
             }
@@ -111,7 +109,7 @@ export default function Detail() {
     try {
       if (isLiked) {
         await axios.delete(
-          'http://localhost:3001/users/remove-lesson-favorite',
+          `${API_URL}/users/remove-lesson-favorite`,
           {
             data: { member_id: auth.id, lesson_id: pid },
             headers: { Authorization: `Bearer ${auth.token}` },
@@ -119,7 +117,7 @@ export default function Detail() {
         )
       } else {
         await axios.post(
-          'http://localhost:3001/users/add-lesson-favorite',
+          `${API_URL}/users/add-lesson-favorite`,
           { member_id: auth.id, lesson_id: pid },
           { headers: { Authorization: `Bearer ${auth.token}` } }
         )

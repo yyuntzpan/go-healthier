@@ -24,7 +24,7 @@ export default function Detail() {
         setIsLoading(true)
         try {
           const coachResponse = await axios.get(
-            `http://localhost:3001/coaches/api/${pid}`
+            `${process.env.NEXT_PUBLIC_URL}/coaches/api/${pid}`
           )
           if (coachResponse.data.success) {
             setCoach(coachResponse.data.coach)
@@ -34,7 +34,7 @@ export default function Detail() {
 
           if (auth.token && auth.id) {
             const favoriteResponse = await axios.get(
-              `http://localhost:3001/users/check-favorite/${auth.id}/${pid}`,
+              `${process.env.NEXT_PUBLIC_URL}/users/check-favorite/${auth.id}/${pid}`,
               {
                 headers: { Authorization: `Bearer ${auth.token}` },
               }
@@ -62,13 +62,16 @@ export default function Detail() {
 
     try {
       if (isLiked) {
-        await axios.delete('http://localhost:3001/users/remove-favorite', {
-          data: { member_id: auth.id, coach_id: pid },
-          headers: { Authorization: `Bearer ${auth.token}` },
-        })
+        await axios.delete(
+          `${process.env.NEXT_PUBLIC_URL}/users/remove-favorite`,
+          {
+            data: { member_id: auth.id, coach_id: pid },
+            headers: { Authorization: `Bearer ${auth.token}` },
+          }
+        )
       } else {
         await axios.post(
-          'http://localhost:3001/users/add-favorite',
+          `${process.env.NEXT_PUBLIC_URL}/users/add-favorite`,
           { member_id: auth.id, coach_id: pid },
           { headers: { Authorization: `Bearer ${auth.token}` } }
         )

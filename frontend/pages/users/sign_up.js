@@ -57,7 +57,7 @@ export default function SignUp() {
 
     console.log('送出', name, email, password)
 
-    const res = await fetch('http://localhost:3001/users/add', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/users/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

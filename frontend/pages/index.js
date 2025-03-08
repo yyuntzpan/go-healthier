@@ -29,7 +29,7 @@ export default function Home() {
   const [slideOne, setSlideOne] = useState('0')
   const [slideTwo, setSlideTwo] = useState('0')
   const pageWrapRef = useRef(null)
-
+  const API_URL = process.env.NEXT_PUBLIC_URL
   const [heroImageVisible, setHeroImageVisible] = useState(false)
 
   // useEffect(() => {
@@ -68,7 +68,7 @@ export default function Home() {
         let response = ''
         if (auth.token) {
           response = await axios.get(
-            'http://localhost:3001/articles/api/listData?keyword=挑戰',
+            `${API_URL}/articles/api/listData?keyword=挑戰`,
             {
               headers: {
                 Authorization: `Bearer ${auth.token}`,
@@ -78,7 +78,7 @@ export default function Home() {
           )
         } else {
           response = await axios.get(
-            'http://localhost:3001/articles/api/listData?keyword=挑戰'
+            `${API_URL}/articles/api/listData?keyword=挑戰`
           )
         }
         if (response.data.success) {
@@ -94,9 +94,7 @@ export default function Home() {
 
     const fetchHotLessons = async () => {
       try {
-        const response = await axios.get(
-          'http://localhost:3001/lessons/api/hotLessons'
-        )
+        const response = await axios.get(`${API_URL}/lessons/api/hotLessons`)
         if (response.data.success) {
           setHotLesson(response.data.hotLessons)
         }
@@ -109,9 +107,7 @@ export default function Home() {
 
     const fetchHotCoaches = async () => {
       try {
-        const response = await axios.get(
-          'http://localhost:3001/coaches/api/hotCoach'
-        )
+        const response = await axios.get(`${API_URL}/coaches/api/hotCoach`)
         if (response.data.success) {
           setHotCoach(response.data.hotCoaches)
         }
@@ -185,13 +181,15 @@ export default function Home() {
                   <div className={`${styles.heroText} col-md-8 col-10`}>
                     <img
                       src="/index-img/heroBig.png"
-                      className={`${styles.heroImgBig} ${styles['fade-in']} ${heroImageVisible ? styles['visible'] : ''
-                        }`}
+                      className={`${styles.heroImgBig} ${styles['fade-in']} ${
+                        heroImageVisible ? styles['visible'] : ''
+                      }`}
                     />
                     <img
                       src="/index-img/heroMid.png"
-                      className={`${styles.heroImgMid} ${styles['fade-in']} ${heroImageVisible ? styles['visible'] : ''
-                        }`}
+                      className={`${styles.heroImgMid} ${styles['fade-in']} ${
+                        heroImageVisible ? styles['visible'] : ''
+                      }`}
                     />
                   </div>
                   <div
@@ -199,13 +197,15 @@ export default function Home() {
                   >
                     <img
                       src="/index-img/hero-img.svg"
-                      className={`${styles.heroImgBig} ${heroImageVisible ? styles['slide-in-right'] : ''
-                        }`}
+                      className={`${styles.heroImgBig} ${
+                        heroImageVisible ? styles['slide-in-right'] : ''
+                      }`}
                     />
                     <img
                       src="/index-img/hero-img.svg"
-                      className={`${styles.heroImgMid} ${heroImageVisible ? styles['slide-in-right'] : ''
-                        }`}
+                      className={`${styles.heroImgMid} ${
+                        heroImageVisible ? styles['slide-in-right'] : ''
+                      }`}
                     />
                   </div>
                 </div>
@@ -242,8 +242,9 @@ export default function Home() {
 
           <section className={`${styles.keyVisualSP}`}>
             <div
-              className={`${styles.heroImageContainer} ${hideHero ? styles.hideHero : ''
-                }`}
+              className={`${styles.heroImageContainer} ${
+                hideHero ? styles.hideHero : ''
+              }`}
             >
               <div className={styles.logoSP}>
                 <Link href="/">

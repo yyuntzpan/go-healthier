@@ -17,6 +17,7 @@ import coachRouter from "./routes/coaches/coach.js";
 import productRouter from "./routes/product/product-traning-list.js";
 import usersRouter from "./routes/users/users.js";
 import gymRouter from "./routes/gyms/gyms.js";
+import mapRouter from "./routes/gyms/maps.js";
 import paymentRouter from "./routes/payment/payment.js";
 import shipmentRouter from "./routes/product/shipment.js";
 import productPayment from "./routes/payment/product-payment.js";
@@ -69,6 +70,7 @@ app.use("/coaches", coachRouter);
 app.use("/product", productRouter);
 app.use("/users", usersRouter);
 app.use("/gyms", gymRouter);
+app.use("/maps", mapRouter)
 app.use("/payment", paymentRouter);
 app.use("/shipment", shipmentRouter);
 app.use("/updateProfile", updateProfileRouter);

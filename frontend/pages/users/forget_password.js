@@ -33,7 +33,7 @@ export default function ForgetPassword() {
 
     try {
       const response = await fetch(
-        'http://localhost:3001/users/test_forget_password',
+        `${process.env.NEXT_PUBLIC_URL}/users/test_forget_password`,
         {
           method: 'POST',
           headers: {

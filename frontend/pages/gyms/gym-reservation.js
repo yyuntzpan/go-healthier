@@ -114,7 +114,7 @@ export default function GymReservation() {
   const fetchGymData = async (gymId) => {
     if (!router.isReady) return null
 
-    const url = `http://localhost:3001/gyms/api/${gymId}`
+    const url = `${process.env.NEXT_PUBLIC_URL}/gyms/api/${gymId}`
     try {
       const response = await fetch(url)
       const data = await response.json()
@@ -262,13 +262,8 @@ export default function GymReservation() {
       console.log(gymData)
       console.log('表單提交', formData)
 
-      // const response = await axios.post(
-      //   'http://localhost:3001/gyms/add/reservation',
-      //   formData
-      // )
-      //測試
       const response = await axios.post(
-        'http://localhost:3001/gyms/add/reservation',
+        `${process.env.NEXT_PUBLIC_URL}/gyms/add/reservation`,
         dataToSubmit
       )
       setShowModal(true)
