@@ -57,7 +57,7 @@ app.use((req, res, next) => {
     const token = auth.slice(7); //去掉"Bearer "
     try {
       req.my_jwt = jwt.verify(token, process.env.JWT_KEY);
-    } catch (ex) { }
+    } catch (ex) {}
   }
 
   next();
@@ -70,7 +70,7 @@ app.use("/coaches", coachRouter);
 app.use("/product", productRouter);
 app.use("/users", usersRouter);
 app.use("/gyms", gymRouter);
-app.use("/maps", mapRouter)
+app.use("/maps", mapRouter);
 app.use("/payment", paymentRouter);
 app.use("/shipment", shipmentRouter);
 app.use("/updateProfile", updateProfileRouter);
@@ -114,7 +114,7 @@ app.post("/avatar-upload", imgUpload.single("avatar"), async (req, res) => {
       // 如果舊頭像不是默認頭像，則刪除它
       if (oldAvatar && oldAvatar !== "default_avatar.png") {
         const oldAvatarPath = path.join("public/users", oldAvatar);
-        await fs.unlink(oldAvatarPath).catch(() => { });
+        await fs.unlink(oldAvatarPath).catch(() => {});
       }
 
       res.json({
@@ -149,7 +149,7 @@ app.use((req, res) => {
   res.send("wrong path");
 });
 
-const port = process.env.WEB_PORT || 3002;
+const port = process.env.PORT || process.env.WEB_PORT || 3002;
 app.listen(port, () => {
   console.log(`Server start, listen port ${port}`);
 });
