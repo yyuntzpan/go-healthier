@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import selectWhereRouter from "./routes/users/selectWhere.js";
 import updateProfileRouter from "./routes/users/updateProfile.js";
 import db from "./utils/connect-mysql.js";
+
 import imgUpload from "./utils/upload-imgs.js";
 import fs from "fs/promises";
 import path from "path";
@@ -30,10 +31,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const corsOption = {
   credentails: true,
-  origin: (origin, cb) => {
-    // console.log({origin});
-    cb(null, true);
-  },
+  origin: ["https://go-healthier.vercel.app/", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
 };
 app.use(cors(corsOption));
 
@@ -149,7 +148,11 @@ app.use((req, res) => {
   res.send("wrong path");
 });
 
-const port = process.env.PORT || process.env.WEB_PORT || 3002;
-app.listen(port, () => {
-  console.log(`Server start, listen port ${port}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  const port = process.env.PORT || process.env.WEB_PORT || 3002;
+  app.listen(port, () => {
+    console.log(`Server start, listen port ${port}`);
+  });
+}
+
+export default app;
