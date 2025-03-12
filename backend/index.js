@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import selectWhereRouter from "./routes/users/selectWhere.js";
 import updateProfileRouter from "./routes/users/updateProfile.js";
 import db from "./utils/connect-mysql.js";
+
 import imgUpload from "./utils/upload-imgs.js";
 import fs from "fs/promises";
 import path from "path";
@@ -29,11 +30,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const corsOption = {
-  credentails: true,
-  origin: (origin, cb) => {
-    // console.log({origin});
-    cb(null, true);
-  },
+  credentials: true,
+  origin: ["https://go-healthier.vercel.app/", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
 };
 app.use(cors(corsOption));
 
@@ -57,7 +56,7 @@ app.use((req, res, next) => {
     const token = auth.slice(7); //去掉"Bearer "
     try {
       req.my_jwt = jwt.verify(token, process.env.JWT_KEY);
-    } catch (ex) { }
+    } catch (ex) {}
   }
 
   next();
@@ -70,7 +69,7 @@ app.use("/coaches", coachRouter);
 app.use("/product", productRouter);
 app.use("/users", usersRouter);
 app.use("/gyms", gymRouter);
-app.use("/maps", mapRouter)
+app.use("/maps", mapRouter);
 app.use("/payment", paymentRouter);
 app.use("/shipment", shipmentRouter);
 app.use("/updateProfile", updateProfileRouter);
@@ -114,7 +113,7 @@ app.post("/avatar-upload", imgUpload.single("avatar"), async (req, res) => {
       // 如果舊頭像不是默認頭像，則刪除它
       if (oldAvatar && oldAvatar !== "default_avatar.png") {
         const oldAvatarPath = path.join("public/users", oldAvatar);
-        await fs.unlink(oldAvatarPath).catch(() => { });
+        await fs.unlink(oldAvatarPath).catch(() => {});
       }
 
       res.json({
@@ -149,7 +148,11 @@ app.use((req, res) => {
   res.send("wrong path");
 });
 
-const port = process.env.WEB_PORT || 3002;
-app.listen(port, () => {
-  console.log(`Server start, listen port ${port}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  const port = process.env.PORT || process.env.WEB_PORT || 3002;
+  app.listen(port, () => {
+    console.log(`Server start, listen port ${port}`);
+  });
+}
+
+export default app;

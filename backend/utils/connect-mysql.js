@@ -1,10 +1,8 @@
-import mysql from 'mysql2/promise';
+import mysql from "mysql2/promise";
 
-const { DB_HOST, DB_USER, DB_PASS, DB_NAME
-} = process.env;
+const { DB_HOST, DB_USER, DB_PASS, DB_NAME } = process.env;
 
-console.log({ DB_HOST, DB_USER, DB_PASS, DB_NAME
-});
+console.log({ DB_HOST, DB_USER, DB_PASS, DB_NAME });
 
 const db = await mysql.createPool({
   host: DB_HOST,
@@ -14,6 +12,7 @@ const db = await mysql.createPool({
   waitForConnections: true,
   connectionLimit: 5,
   queueLimit: 0,
+  connectTimeout: 60000, // 增加連接超時時間到 60 秒
 });
 
 export default db;
