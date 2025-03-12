@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const corsOption = {
-  credentails: true,
+  credentials: true,
   origin: ["https://go-healthier.vercel.app/", "http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
