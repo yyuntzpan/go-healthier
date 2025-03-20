@@ -1,6 +1,7 @@
 import mysql from "mysql2/promise";
+import "dotenv/config.js";
 
-const { DB_HOST, DB_USER, DB_PASS, DB_NAME } = process.env;
+const { DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT } = process.env;
 
 console.log({ DB_HOST, DB_USER, DB_PASS, DB_NAME });
 
@@ -9,6 +10,7 @@ const db = await mysql.createPool({
   user: DB_USER,
   password: DB_PASS,
   database: DB_NAME,
+  port: DB_PORT,
   waitForConnections: true,
   connectionLimit: 5,
   queueLimit: 0,

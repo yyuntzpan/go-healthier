@@ -229,25 +229,13 @@ function GoogleMapsComponent({ apiKey, gymsData, searchTerm }) {
 }
 
 export default function MapErea({ gymsData, searchTerm }) {
-  const [apiKey, setApiKey] = useState(null)
-  useEffect(() => {
-    const fetchApiKey = async () => {
-      try {
-        const url = `${process.env.NEXT_PUBLIC_URL}/gyms/mapkey`
-        const res = await fetch(url) // 向後端請求 API Key
-        const data = await res.json()
-        setApiKey(data.apiKey)
-      } catch (error) {
-        console.error('Error fetching API key:', error)
-      }
-    }
-    fetchApiKey()
-  }, [])
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+ 
 
   if (!apiKey) {
     return (
       <h5 style={{ textAlign: 'center', lineHeight: '300px' }}>
-        Fetching API Key...
+        Google Maps API Key not found in environment variables.
       </h5>
     )
   }
