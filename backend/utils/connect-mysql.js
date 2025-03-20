@@ -1,6 +1,5 @@
 import mysql from "mysql2/promise";
-import dotenv from "dotenv";
-dotenv.config();
+import "dotenv/config.js";
 
 const { DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT } = process.env;
 
